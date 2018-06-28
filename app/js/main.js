@@ -26,9 +26,9 @@
 })();
 
 (function detectGrid() {
-  var titleContainer = document.getElementById("title");
+  var topContainer = document.getElementById("page-top-inner");
   var outerContainer = document.getElementById("outer");
-  var containerStyle = window.getComputedStyle(titleContainer);
+  var containerStyle = window.getComputedStyle(topContainer);
   var vals = Object.keys(containerStyle).map(function(key) {
       return containerStyle[key];
   });
@@ -48,156 +48,101 @@
   }
 })();
 
-
-(function largeTextContent() {
-  $('.content-block').map(function(index,element) {
-
-    if ($(element).find('.large-text-value').length > 0) {
-      var theseValues = $(element).find('.large-text-value')
-      var theseTexts = $(element).find('.large-text-text')
-
-      theseValues.map(function(innerIndex,innerElement) {
-        var thisValue = $(innerElement).html()
-        $(theseTexts[innerIndex]).html(thisValue)
-      })
-    }
-  })
-})();
-
-function wrapImageHeight(){
-  var wrapTextBlock = $('.image-paragraph-wrap-around .whole-content-block')
-  var thisValueFontSize = parseInt(wrapTextBlock[0].clientHeight)
-
-  $('.wrap-around-image-container .side-image').css('max-height',wrapTextBlock[0].clientHeight)
-  $('.wrap-around-image-container .side-image').css('max-height',wrapTextBlock[0].clientHeight)
-  $('.wrap-around-image-container .side-image').css('max-height',wrapTextBlock[0].clientHeight)
-}
-
-if ($('.wrap-around-image-container').length > 0) {
-  $(window).on('load', wrapImageHeight);
-  $(window).on('resize', wrapImageHeight);
-}
-
-function largeTextFontSize(element,container,ratio,max) {
-  var thisValue = $(element).find('.large-text-value')
-  var thisText = $(element).find('.large-text-text')
-  var thisElement = $(element)
-  var thisValueFontSize = parseInt(window.getComputedStyle(thisValue[0]).getPropertyValue("font-size"))
-  var valueWidth = thisValue.width()
-  var containerWidth = $(container).width()
-  var resultingValueFontSize = ((containerWidth/valueWidth)*thisValueFontSize)/ratio
-
-
-  if (resultingValueFontSize >= max) {
-    $(thisText).css('font-size',max)
-    $(thisValue).css('font-size',max)
-
-  } else if (resultingValueFontSize < max){
-    $(thisText).css('font-size',resultingValueFontSize)
-    if ($(element)[0].className == 'bullet-image') {
-      $(thisValue).css('font-size',resultingValueFontSize)
-    }
-  }
-}
-
-
-
-function launchFontSizeTitle() {
-  largeTextFontSize($('.content-title')[0],'.content-section',0.7,75);
-}
-
-$(window).on('load', launchFontSizeTitle);
-$(window).on('resize', launchFontSizeTitle);
-
-
-function commaSeparateNumber(val){
-   while (/(\d+)(\d{3})/.test(val.toString())){
-     val = val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-   }
-   return val;
- }
-
-function startCounter(){
-
-  $(".counter li").each(function (index, element) {
-    var thisText = $(this).find(".large-text-text");
-    var thisValue = $(this).find(".large-text-value");
-
-  	thisValue.each(function (index) {
-          var size = $(this).text().split(".")[1] ? $(this).text().split(".")[1].length : 0;
-  	    $(this).prop('Counter',0).animate({
-  	        Counter: $(this).text()
-  	    }, {
-  	        duration: 2000,
-  	        easing: 'swing',
-  	        step: function (now) {
-                thisText.text(commaSeparateNumber(parseFloat(now).toFixed(size)));
-
-  	        }
-  	    });
-  	});
-  })
-}
+// document.addEventListener('DOMContentLoaded', function canvasFunc(){
+//
+// (function canvasFunc(){
+//   var outputCanvas = document.getElementById('output'),
+//   output = outputCanvas.getContext('2d'),
+//   bufferCanvas = document.getElementById('buffer'),
+//   buffer = bufferCanvas.getContext('2d'),
+//   video = document.getElementById('video'),
+//   width = outputCanvas.width,
+//   height = outputCanvas.height,interval;
+//   console.log(video)
+//
+//     buffer.drawImage(video, 0, 0);
+//     console.log(buffer)
+//
+//         // this can be done without alphaData, except in Firefox which doesn't like it when image is bigger than the canvas
+//     var image = buffer.getImageData(0, 0, width, height),
+//     imageData = image.data,
+//     alphaData = buffer.getImageData(0, height, width, height).data;
+//     console.log(width)
+//     console.log(height)
+//
+//     for (var i = 3, len = imageData.length; i < len; i = i + 4) {
+//       imageData[i] = alphaData[i-1];
+//     }
+//
+//     output.putImageData(image, 0, 0, 0, 0, width, height);
+//
+//
+//
+// })()
+//
+//
+//
+// video.addEventListener('play', function() {
+//   clearInterval(interval);
+//   interval = setInterval(processFrame, 40)
+// }, false);
+//
+// // Firefox doesn't support looping video, so we emulate it this way
+// video.addEventListener('ended', function() {
+//   video.play();
+// }, false);
+//
+// document.getElementById('start').addEventListener('click', function(event) {
+//   video.play();
+//   event.preventDefault();
+// }, false);
+//
+// document.getElementById('stop').addEventListener('click', function(event) {
+//   video.pause();
+//   clearInterval(interval);
+//   event.preventDefault();
+// }, false);
+//
+// document.getElementById('toggleProcessing').addEventListener('click', function(event) {
+//   var toShow = video,
+//     toHide = outputCanvas;
+//
+//   if (video.style.display == 'block') {
+//     toShow = outputCanvas;
+//     toHide = video;
+//   }
+//
+//   toShow.style.display = 'block';
+//   toHide.style.display = 'none';
+//
+//   event.preventDefault();
+// }, false);
+//
+// });
 
 
 
-
-
-
-startCounter();
-
-function launchFontSizeBullets() {
-
-  $('.content-block').map(function(index,element) {
-    var widthsArray = []
-
-    if (($(element).find('.large-text-value').length > 0) && ($(element).find('.bullet-image').length > 0)) {
-      var theseBullets = $(element).find('.bullet-image')
-
-      theseBullets.map(function(innerIndex,innerElement,container,ratio) {
-        largeTextFontSize(innerElement,'.bullet-list',4.5, 96)
-      });
-    }
-  })
-}
-
-$(window).on('load', launchFontSizeBullets);
-$(window).on('resize', launchFontSizeBullets);
-
-
-function launchWidthBullets() {
-
-  $('.content-block').map(function(index,element) {
-    var widthsArray = []
-
-    if (($(element).find('.large-text-value').length > 0) && ($(element).find('.bullet-image').length > 0)) {
-      var theseBullets = $(element).find('.bullet-image')
-
-      theseBullets.map(function(innerIndex,innerElement,container,ratio) {
-          var thisElement = $(innerElement)
-          var thisValue = $(innerElement).find('.large-text-value')
-          var thisValueFontSize = parseInt(window.getComputedStyle(thisValue[0]).getPropertyValue("width"))
-          var thisSymbol = $(innerElement).find('.large-text-symbol')
-          var valueWidth = thisValue.width()
-          var symbolWidth = thisSymbol.width()
-          var textSummedWidth = valueWidth + symbolWidth + 20
-          widthsArray.push(textSummedWidth)
-
-      });
-
-      var biggestWidth = Math.max.apply(null, widthsArray);
-
-      theseBullets.map(function(innerIndex,innerElement) {
-        $(innerElement).css('min-width', biggestWidth)
-        $($(innerElement).parent()).css('grid-template-columns', biggestWidth + 'px auto')
-      })
-    }
-  })
-}
-
-$(window).on('load', launchWidthBullets);
-$(window).on('resize', launchWidthBullets);
-
+// document.addEventListener('DOMContentLoaded', function(){
+//     var v = document.getElementById('v');
+//     var canvas = document.getElementById('c');
+//     var context = canvas.getContext('2d');
+//
+//     var cw = Math.floor(canvas.clientWidth / 100);
+//     var ch = Math.floor(canvas.clientHeight / 100);
+//     canvas.width = cw;
+//     canvas.height = ch;
+//
+//     v.addEventListener('play', function(){
+//         draw(this,context,cw,ch);
+//     },false);
+//
+// },false);
+//
+// function draw(v,c,w,h) {
+//     if(v.paused || v.ended) return false;
+//     c.drawImage(v,0,0,w,h);
+//     setTimeout(draw,20,v,c,w,h);
+// }
 
 
 
