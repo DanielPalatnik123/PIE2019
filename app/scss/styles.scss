@@ -31,6 +31,15 @@ h1 {
   }
 }
 
+h2 {
+  font-weight: 900;
+  font-size: 24px;
+
+  @media all and (min-width: 520px) {
+    font-size: 28px;
+  }
+}
+
 h3 {
   font-weight: 400;
   font-size: 14px;
@@ -63,12 +72,16 @@ h5 {
 p {
   margin: 0;
   font-size: 14px;
-  line-height: 22px;
+  line-height: 20px;
 
   @media all and (min-width: 520px) {
     font-size: 16px;
-    line-height: 24px;
+    line-height: 22px;
   }
+}
+
+a {
+  color: rgba(0,0,0,0.7);
 }
 
 input,
@@ -196,34 +209,11 @@ h4,
 .split-content-block {
   display: grid;
   display: -ms-grid;
-
-  // .text-block {
-  //   grid-area: splitText;
-  //   -ms-grid-row: 1;
-  //   margin-left: 0;
-  //
-  //   @media all and (min-width: 520px) and (max-width: 767px) {
-  //     margin-left: 25px;
-  //     -ms-grid-row: 1;
-  //     -ms-grid-column: 2;
-  //   }
-  //
-  //   @media all and (min-width: 768px) and (max-width: 990px) {
-  //     margin-left: 0;
-  //     -ms-grid-row: 1;
-  //   }
-  //
-  //   @media all and (min-width: 991px) {
-  //     margin-left: 25px;
-  //     -ms-grid-row: 1;
-  //     -ms-grid-column: 2;
-  //   }
-  // }
 }
 
 /*css specific to containers - grid system*/
 
-.col-66-33,
+.col-66-34,
 .col-60-40,
 .col-40-60 {
   display: grid;
@@ -234,26 +224,44 @@ h4,
   -ms-grid-rows: 50% 50%;
 }
 
-.col-66-33 {
+.col-66-34 {
   @media all and (min-width: 768px) {
-    grid-template-columns: 66% 33%;
-    -ms-grid-columns: 66% 33%;
+    grid-template-columns: 66% 34%;
+    -ms-grid-columns: 66% 34%;
   }
 
   &.split-content-block {
     grid-template-columns: 100%;
     -ms-grid-columns: 100%;
-    grid-template-rows: 66% 33%;
-    -ms-grid-rows: 66% 33%;
+    grid-template-rows: 66% 34%;
+    -ms-grid-rows: 66% 34%;
 
     @media all and (min-width: 520px) {
       grid-template-rows: 100%;
       -ms-grid-rows: 100%;
-      grid-template-columns: 66% 33%;
-      -ms-grid-columns: 66% 33%;
+      grid-template-columns: 66% 34%;
+      -ms-grid-columns: 66% 34%;
     }
   }
 }
+
+.col-33-33-33 {
+  &.split-content-block {
+    grid-template-columns: 100%;
+    -ms-grid-columns: 100%;
+    grid-template-rows: 32% 32% 32%;
+    -ms-grid-rows: 32% 32% 32%;
+    grid-column-gap: 17.5px;
+
+    @media all and (min-width: 768px) {
+      grid-template-rows: 100%;
+      -ms-grid-rows: 100%;
+      grid-template-columns: 32% 32% 32%;
+      -ms-grid-columns: 32% 32% 32%;
+    }
+  }
+}
+
 
 .col-60-40 {
   @media all and (min-width: 768px) {
@@ -312,10 +320,6 @@ h4,
 }
 
 
-/*css specific to base elements*/
-
-
-
 /*css specific to header*/
 header {
   position: fixed;
@@ -345,8 +349,10 @@ header {
     background-repeat: no-repeat;
     background-position: -33px center;
     background-size: 70% 70%;
-    border-radius: 25px;
-    padding: 10px 20px;
+
+    &:hover {
+      background-color: #F2C14B;
+    }
 
     span {
       padding-left: 25px;
@@ -354,6 +360,9 @@ header {
     }
   }
 }
+
+
+/*css specific to base elements*/
 
 .title-block {
   display: grid;
@@ -400,6 +409,25 @@ header {
   position: relative;
 }
 
+.button {
+  border-radius: 25px;
+  padding: 10px 20px;
+  display: block;
+  background-color: #ffffff;
+  transition: all .5s linear;
+  text-decoration: none;
+  text-align: center;
+  max-width: 250px;
+
+  &:hover {
+    transition: all .5s linear;
+  }
+
+  span {
+    text-transform: uppercase;
+  }
+}
+
 
 /*css specific to the individual sections */
 
@@ -410,7 +438,7 @@ video,
 
 .page-bg {
   background: #91d1dd;
-  height: 325vh;
+  height: 500vh;
   width: 100vw;
   margin-top: 70vh;
 }
@@ -470,12 +498,6 @@ video,
     padding: 17.5px 30px;
   }
 
-  .left-column {
-    @media all and (min-width: 991px) {
-      margin-right: 17.5px;
-    }
-  }
-
   .logo-block {
     @media all and (min-width: 768px) {
       margin-right: 17.5px;
@@ -494,6 +516,10 @@ video,
   }
 
   .right-column {
+    @media all and (min-width: 991px) {
+      margin-left: 17.5px;
+    }
+
     .text-block,
     .image-block {
       margin-bottom: 17.5px;
@@ -501,9 +527,82 @@ video,
   }
 }
 
+.keynotes {
+  .keynote-block {
+    background-color: rgb(42,176,201);
+    margin: 17.5px 0;
+    display: block;
+    text-decoration: none;
+    transition: all .5s linear;
 
+    &:hover {
+      background-color: #FFD46A;
+      transition: all .5s linear;
 
+      .arrow-up {
+        border-bottom: 10px solid #FFD46A;
+        transition: all .5s linear;
+      }
+    }
 
+    .arrow-up {
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 10px solid rgb(42,176,201);
+      position: absolute;
+      margin-left: 30px;
+      margin-top: -12px;
+      transition: all .5s linear
+    }
+
+    .highlight {
+      font-size: 12px;
+      font-weight: 400;
+      padding-bottom: 9px;
+
+      @media all and (min-width: 520px) and (max-width: 767px) {
+        font-size: 14px;
+      }
+
+      @media all and (min-width: 768px) and (max-width: 990px) {
+        font-size: 16px;
+      }
+
+      @media all and (min-width: 991px) {
+        font-size: 18px;
+      }
+    }
+  }
+
+  p,
+  h5,
+  span {
+    display: block;
+    color: rgba(0,0,0,0.7);
+  }
+
+  h2,
+  p {
+    padding: 30px;
+  }
+
+  h5,
+  span {
+    padding: 0 30px;
+  }
+}
+
+.partner-award {
+  h1 {
+    color: #2C585C;
+  }
+
+  h2 {
+    color: rgba(0,0,0,0.7);
+  }
+}
 
 
 /*css specific to the footer*/

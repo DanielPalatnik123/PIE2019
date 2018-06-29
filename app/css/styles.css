@@ -24,6 +24,13 @@ h1 {
     h1 {
       font-size: 7vw; } }
 
+h2 {
+  font-weight: 900;
+  font-size: 24px; }
+  @media all and (min-width: 520px) {
+    h2 {
+      font-size: 28px; } }
+
 h3 {
   font-weight: 400;
   font-size: 14px;
@@ -50,11 +57,14 @@ h5 {
 p {
   margin: 0;
   font-size: 14px;
-  line-height: 22px; }
+  line-height: 20px; }
   @media all and (min-width: 520px) {
     p {
       font-size: 16px;
-      line-height: 24px; } }
+      line-height: 22px; } }
+
+a {
+  color: rgba(0, 0, 0, 0.7); }
 
 input,
 select,
@@ -158,7 +168,7 @@ h4,
   display: -ms-grid; }
 
 /*css specific to containers - grid system*/
-.col-66-33,
+.col-66-34,
 .col-60-40,
 .col-40-60 {
   display: grid;
@@ -169,21 +179,34 @@ h4,
   -ms-grid-rows: 50% 50%; }
 
 @media all and (min-width: 768px) {
-  .col-66-33 {
-    grid-template-columns: 66% 33%;
-    -ms-grid-columns: 66% 33%; } }
+  .col-66-34 {
+    grid-template-columns: 66% 34%;
+    -ms-grid-columns: 66% 34%; } }
 
-.col-66-33.split-content-block {
+.col-66-34.split-content-block {
   grid-template-columns: 100%;
   -ms-grid-columns: 100%;
-  grid-template-rows: 66% 33%;
-  -ms-grid-rows: 66% 33%; }
+  grid-template-rows: 66% 34%;
+  -ms-grid-rows: 66% 34%; }
   @media all and (min-width: 520px) {
-    .col-66-33.split-content-block {
+    .col-66-34.split-content-block {
       grid-template-rows: 100%;
       -ms-grid-rows: 100%;
-      grid-template-columns: 66% 33%;
-      -ms-grid-columns: 66% 33%; } }
+      grid-template-columns: 66% 34%;
+      -ms-grid-columns: 66% 34%; } }
+
+.col-33-33-33.split-content-block {
+  grid-template-columns: 100%;
+  -ms-grid-columns: 100%;
+  grid-template-rows: 32% 32% 32%;
+  -ms-grid-rows: 32% 32% 32%;
+  grid-column-gap: 17.5px; }
+  @media all and (min-width: 768px) {
+    .col-33-33-33.split-content-block {
+      grid-template-rows: 100%;
+      -ms-grid-rows: 100%;
+      grid-template-columns: 32% 32% 32%;
+      -ms-grid-columns: 32% 32% 32%; } }
 
 @media all and (min-width: 768px) {
   .col-60-40 {
@@ -231,7 +254,6 @@ h4,
       grid-template-columns: 40% 60%;
       -ms-grid-columns: 40% 60%; } }
 
-/*css specific to base elements*/
 /*css specific to header*/
 header {
   position: fixed;
@@ -253,13 +275,14 @@ header {
     background-image: url("https://cipherhealth.com/wp-content/uploads/2018/06/ticket.svg");
     background-repeat: no-repeat;
     background-position: -33px center;
-    background-size: 70% 70%;
-    border-radius: 25px;
-    padding: 10px 20px; }
+    background-size: 70% 70%; }
+    header #submit:hover {
+      background-color: #F2C14B; }
     header #submit span {
       padding-left: 25px;
       color: #2C585C; }
 
+/*css specific to base elements*/
 .title-block {
   display: grid;
   display: -ms-grid;
@@ -296,6 +319,20 @@ header {
   background-size: cover;
   position: relative; }
 
+.button {
+  border-radius: 25px;
+  padding: 10px 20px;
+  display: block;
+  background-color: #ffffff;
+  transition: all .5s linear;
+  text-decoration: none;
+  text-align: center;
+  max-width: 250px; }
+  .button:hover {
+    transition: all .5s linear; }
+  .button span {
+    text-transform: uppercase; }
+
 /*css specific to the individual sections */
 video,
 .page-bg {
@@ -303,7 +340,7 @@ video,
 
 .page-bg {
   background: #91d1dd;
-  height: 325vh;
+  height: 500vh;
   width: 100vw;
   margin-top: 70vh; }
 
@@ -350,10 +387,6 @@ video,
   background-color: rgba(255, 255, 255, 0.7);
   padding: 17.5px 30px; }
 
-@media all and (min-width: 991px) {
-  .the-conference .left-column {
-    margin-right: 17.5px; } }
-
 @media all and (min-width: 768px) {
   .the-conference .logo-block {
     margin-right: 17.5px; } }
@@ -366,9 +399,69 @@ video,
   .the-conference .logo-block .logos .logo img {
     max-width: 80%; }
 
+@media all and (min-width: 991px) {
+  .the-conference .right-column {
+    margin-left: 17.5px; } }
+
 .the-conference .right-column .text-block,
 .the-conference .right-column .image-block {
   margin-bottom: 17.5px; }
+
+.keynotes .keynote-block {
+  background-color: #2ab0c9;
+  margin: 17.5px 0;
+  display: block;
+  text-decoration: none;
+  transition: all .5s linear; }
+  .keynotes .keynote-block:hover {
+    background-color: #FFD46A;
+    transition: all .5s linear; }
+    .keynotes .keynote-block:hover .arrow-up {
+      border-bottom: 10px solid #FFD46A;
+      transition: all .5s linear; }
+  .keynotes .keynote-block .arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #2ab0c9;
+    position: absolute;
+    margin-left: 30px;
+    margin-top: -12px;
+    transition: all .5s linear; }
+  .keynotes .keynote-block .highlight {
+    font-size: 12px;
+    font-weight: 400;
+    padding-bottom: 9px; }
+    @media all and (min-width: 520px) and (max-width: 767px) {
+      .keynotes .keynote-block .highlight {
+        font-size: 14px; } }
+    @media all and (min-width: 768px) and (max-width: 990px) {
+      .keynotes .keynote-block .highlight {
+        font-size: 16px; } }
+    @media all and (min-width: 991px) {
+      .keynotes .keynote-block .highlight {
+        font-size: 18px; } }
+
+.keynotes p,
+.keynotes h5,
+.keynotes span {
+  display: block;
+  color: rgba(0, 0, 0, 0.7); }
+
+.keynotes h2,
+.keynotes p {
+  padding: 30px; }
+
+.keynotes h5,
+.keynotes span {
+  padding: 0 30px; }
+
+.partner-award h1 {
+  color: #2C585C; }
+
+.partner-award h2 {
+  color: rgba(0, 0, 0, 0.7); }
 
 /*css specific to the footer*/
 span.footer-text {
