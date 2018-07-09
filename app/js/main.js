@@ -48,103 +48,38 @@
   }
 })();
 
-// document.addEventListener('DOMContentLoaded', function canvasFunc(){
-//
-// (function canvasFunc(){
-//   var outputCanvas = document.getElementById('output'),
-//   output = outputCanvas.getContext('2d'),
-//   bufferCanvas = document.getElementById('buffer'),
-//   buffer = bufferCanvas.getContext('2d'),
-//   video = document.getElementById('video'),
-//   width = outputCanvas.width,
-//   height = outputCanvas.height,interval;
-//   console.log(video)
-//
-//     buffer.drawImage(video, 0, 0);
-//     console.log(buffer)
-//
-//         // this can be done without alphaData, except in Firefox which doesn't like it when image is bigger than the canvas
-//     var image = buffer.getImageData(0, 0, width, height),
-//     imageData = image.data,
-//     alphaData = buffer.getImageData(0, height, width, height).data;
-//     console.log(width)
-//     console.log(height)
-//
-//     for (var i = 3, len = imageData.length; i < len; i = i + 4) {
-//       imageData[i] = alphaData[i-1];
-//     }
-//
-//     output.putImageData(image, 0, 0, 0, 0, width, height);
-//
-//
-//
-// })()
-//
-//
-//
-// video.addEventListener('play', function() {
-//   clearInterval(interval);
-//   interval = setInterval(processFrame, 40)
-// }, false);
-//
-// // Firefox doesn't support looping video, so we emulate it this way
-// video.addEventListener('ended', function() {
-//   video.play();
-// }, false);
-//
-// document.getElementById('start').addEventListener('click', function(event) {
-//   video.play();
-//   event.preventDefault();
-// }, false);
-//
-// document.getElementById('stop').addEventListener('click', function(event) {
-//   video.pause();
-//   clearInterval(interval);
-//   event.preventDefault();
-// }, false);
-//
-// document.getElementById('toggleProcessing').addEventListener('click', function(event) {
-//   var toShow = video,
-//     toHide = outputCanvas;
-//
-//   if (video.style.display == 'block') {
-//     toShow = outputCanvas;
-//     toHide = video;
-//   }
-//
-//   toShow.style.display = 'block';
-//   toHide.style.display = 'none';
-//
-//   event.preventDefault();
-// }, false);
-//
-// });
+
+function expandMenu() {
+  $('.menu-item').removeClass('expanded-menu')
+  $(this).addClass('expanded-menu')
+}
+
+function shrinkMenu() {
+  $('.menu-item').removeClass('expanded-menu')
+}
+
+$('.menu-item').mouseenter(expandMenu);
+$('.menu-item').mouseleave(shrinkMenu);
 
 
+(function attachStyle() {
+  $('.speakers-block').map(function(index,element) {
+    var thisElement = 'speaker' + index
+    element.style.gridArea = thisElement
+  })
 
-// document.addEventListener('DOMContentLoaded', function(){
-//     var v = document.getElementById('v');
-//     var canvas = document.getElementById('c');
-//     var context = canvas.getContext('2d');
-//
-//     var cw = Math.floor(canvas.clientWidth / 100);
-//     var ch = Math.floor(canvas.clientHeight / 100);
-//     canvas.width = cw;
-//     canvas.height = ch;
-//
-//     v.addEventListener('play', function(){
-//         draw(this,context,cw,ch);
-//     },false);
-//
-// },false);
-//
-// function draw(v,c,w,h) {
-//     if(v.paused || v.ended) return false;
-//     c.drawImage(v,0,0,w,h);
-//     setTimeout(draw,20,v,c,w,h);
-// }
+  $('.speakers-initial-container').map(function(index,element) {
 
+    $('.speakers-block').map(function(ind,elem) {
+      $(element).append(elem);
+      // console.log(elem);
+    })
+    console.log(element);
 
+    element.style.gridTemplateAreas = "'speaker5 speaker4 speaker3'"
+  })
+
+})()
 
 
 function showPage() {

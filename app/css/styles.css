@@ -19,10 +19,17 @@ h4 {
 
 h1 {
   font-weight: 900;
-  font-size: 5vw; }
-  @media all and (min-width: 768px) {
+  font-size: 28px;
+  padding-top: 40px;
+  letter-spacing: 1px; }
+  @media all and (min-width: 520px) and (max-width: 1199px) {
     h1 {
-      font-size: 7vw; } }
+      font-size: 7vw;
+      letter-spacing: .2vw; } }
+  @media all and (min-width: 1200px) {
+    h1 {
+      font-size: 80px;
+      letter-spacing: 2px; } }
 
 h2 {
   font-weight: 900;
@@ -139,14 +146,23 @@ h4,
 
 .inner-page-container {
   padding: 30px;
-  margin: 80px 30px 25px; }
-  @media all and (min-width: 520px) {
+  margin: 80px 0 25px; }
+  @media all and (min-width: 768px) {
     .inner-page-container {
       padding: 50px;
       margin: 80px 50px 25px; } }
-  @media all and (min-width: 768px) {
+  @media all and (min-width: 991px) {
     .inner-page-container {
       margin: 80px 150px 25px 50px; } }
+
+.content-section {
+  max-width: 100vw; }
+  @media all and (min-width: 991px) {
+    .content-section {
+      max-width: 69vw; } }
+  @media all and (min-width: 1200px) {
+    .content-section {
+      max-width: 1125px; } }
 
 .content-block {
   -ms-grid-row: 1;
@@ -169,7 +185,9 @@ h4,
 
 /*css specific to containers - grid system*/
 .col-66-34,
-.col-60-40,
+.col-60-20-20,
+.col-20-20-20-20-20,
+.col-20-20-20-40,
 .col-40-60 {
   display: grid;
   display: -ms-grid;
@@ -208,22 +226,52 @@ h4,
       grid-template-columns: 32% 32% 32%;
       -ms-grid-columns: 32% 32% 32%; } }
 
-@media all and (min-width: 768px) {
-  .col-60-40 {
-    grid-template-columns: 60% 40%;
-    -ms-grid-columns: 60% 40%; } }
-
-.col-60-40.split-content-block {
-  grid-template-columns: 100%;
-  -ms-grid-columns: 100%;
-  grid-template-rows: 60% 40%;
-  -ms-grid-rows: 60% 40%; }
-  @media all and (min-width: 991px) {
-    .col-60-40.split-content-block {
+.col-60-20-20.split-content-block {
+  grid-template-columns: 100% 50% 50%;
+  -ms-grid-columns: 100% 50% 50%;
+  grid-template-rows: 60% 20% 20%;
+  -ms-grid-rows: 60% 20% 20%; }
+  @media all and (min-width: 520px) {
+    .col-60-20-20.split-content-block {
       grid-template-rows: 100%;
       -ms-grid-rows: 100%;
-      grid-template-columns: 60% 40%;
-      -ms-grid-columns: 60% 40%; } }
+      grid-template-columns: 60% 20% 20%;
+      -ms-grid-columns: 60% 20% 20%; } }
+
+.col-16-16-16-16-16-16.split-content-block {
+  grid-template-rows: 100%;
+  -ms-grid-rows: 100%;
+  grid-template-columns: 50% 50%;
+  -ms-grid-columns: 50% 50%; }
+  @media all and (min-width: 520px) {
+    .col-16-16-16-16-16-16.split-content-block {
+      grid-template-rows: 100%;
+      -ms-grid-rows: 100%;
+      grid-template-columns: 33.2% 33.2% 33.2%;
+      -ms-grid-columns: 33.2% 33.2% 33.2%; } }
+  @media all and (min-width: 768px) {
+    .col-16-16-16-16-16-16.split-content-block {
+      grid-template-rows: 100%;
+      -ms-grid-rows: 100%;
+      grid-template-columns: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
+      -ms-grid-columns: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%; } }
+
+@media all and (min-width: 768px) {
+  .col-20-20-20-40 {
+    grid-template-columns: 20% 20% 20% 40%;
+    -ms-grid-columns: 20% 20% 20% 40%; } }
+
+.col-20-20-20-40.split-content-block {
+  grid-template-columns: 100%;
+  -ms-grid-columns: 100%;
+  grid-template-rows: 20% 20% 20% 40%;
+  -ms-grid-rows: 20% 20% 20% 40%; }
+  @media all and (min-width: 991px) {
+    .col-20-20-20-40.split-content-block {
+      grid-template-rows: 100%;
+      -ms-grid-rows: 100%;
+      grid-template-columns: 20% 20% 20% 40%;
+      -ms-grid-columns: 20% 20% 20% 40%; } }
 
 @media all and (min-width: 768px) {
   .col-40-60 {
@@ -254,33 +302,129 @@ h4,
       grid-template-columns: 40% 60%;
       -ms-grid-columns: 40% 60%; } }
 
-/*css specific to header*/
-header {
+/*css specific to nav*/
+nav {
   position: fixed;
   right: 0;
   margin: 50px 30px 0 0;
   z-index: 9;
-  text-transform: uppercase; }
-  header li {
-    list-style: none;
-    padding: 15px 0; }
-    header li:first-child {
-      padding: 45px 0 15px; }
-  header a {
-    text-decoration: none;
-    font-size: 14px;
-    color: #ffffff; }
-  header #submit {
-    background-color: #FFD46A;
-    background-image: url("https://cipherhealth.com/wp-content/uploads/2018/06/ticket.svg");
-    background-repeat: no-repeat;
-    background-position: -33px center;
-    background-size: 70% 70%; }
-    header #submit:hover {
-      background-color: #F2C14B; }
-    header #submit span {
-      padding-left: 25px;
-      color: #2C585C; }
+  text-transform: uppercase;
+  /*Make this absolute positioned at the top left of the screen*/ }
+  nav #menuToggle {
+    display: block;
+    top: 50px;
+    left: 50px;
+    z-index: 99;
+    -webkit-user-select: none;
+    user-select: none; }
+    @media all and (min-width: 991px) {
+      nav #menuToggle {
+        top: 0;
+        left: 0; } }
+    nav #menuToggle input {
+      display: block;
+      width: 40px;
+      height: 32px;
+      position: absolute;
+      top: -7px;
+      left: -5px;
+      cursor: pointer;
+      opacity: 0;
+      /* hide this */
+      z-index: 999;
+      /* and place it over the hamburger */
+      -webkit-touch-callout: none;
+      /* Transform all the slices of hamburger into a crossmark. */
+      /* Ohyeah and the last one should go the other direction*/
+      /* But let's hide the middle one.*/
+      /*And let's slide it in from the left*/ }
+      nav #menuToggle input:checked ~ span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: #232323; }
+      nav #menuToggle input:checked ~ span:nth-child(3) {
+        transform: rotate(-45deg) translate(-7px, 3px); }
+      nav #menuToggle input:checked ~ span:nth-child(4) {
+        opacity: 0;
+        transform: rotate(0deg) scale(0.2, 0.2); }
+      nav #menuToggle input:checked ~ ul {
+        transform: none; }
+    nav #menuToggle .hamburger-line {
+      display: block;
+      width: 33px;
+      height: 4px;
+      margin-bottom: 5px;
+      position: relative;
+      background: #cdcdcd;
+      border-radius: 3px;
+      z-index: 1;
+      transform-origin: 4px 0px;
+      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease; }
+    nav #menuToggle input,
+    nav #menuToggle .hamburger-line {
+      display: block;
+      margin-left: 140px; }
+      @media all and (min-width: 991px) {
+        nav #menuToggle input,
+        nav #menuToggle .hamburger-line {
+          opacity: 0; } }
+    nav #menuToggle:first-child {
+      transform-origin: 0% 0%; }
+    nav #menuToggle:nth-last-child(2) {
+      transform-origin: 0% 100%; }
+  nav #menu {
+    width: 175px;
+    margin: -100px 0 0 -52px;
+    padding: 50px;
+    padding-top: 125px;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    height: 100vh;
+    position: fixed;
+    /* to stop flickering of text in safari */
+    transform-origin: 0% 0%;
+    transform: translate(100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1); }
+    @media all and (min-width: 991px) {
+      nav #menu {
+        margin: 10px 0 0;
+        padding: 25px 20px 10px 0;
+        transform: none;
+        height: auto; } }
+    nav #menu .menu-item {
+      list-style: none;
+      padding: 15px 0;
+      text-align: right; }
+      nav #menu .menu-item:first-child {
+        padding: 45px 0 15px; }
+      nav #menu .menu-item a {
+        color: #ffffff;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 900;
+        text-decoration: none; }
+        @media all and (min-width: 768px) and (max-width: 990px) {
+          nav #menu .menu-item a {
+            font-size: 12px; } }
+    nav #menu .menu-item {
+      padding: 8px 10px 15px 0; }
+      @media all and (min-width: 991px) {
+        nav #menu .menu-item {
+          height: 100%; } }
+    nav #menu #submit {
+      background-color: #FFD46A;
+      background-image: url("https://cipherhealth.com/wp-content/uploads/2018/06/ticket.svg");
+      background-repeat: no-repeat;
+      background-position: -33px center;
+      background-size: 70% 70%;
+      max-width: 130px;
+      margin-bottom: 25px; }
+      nav #menu #submit:hover {
+        background-color: #F2C14B; }
+      nav #menu #submit span {
+        padding-left: 25px;
+        font-size: 14px;
+        color: #2C585C; }
 
 /*css specific to base elements*/
 .title-block {
@@ -340,7 +484,7 @@ video,
 
 .page-bg {
   background: #91d1dd;
-  height: 500vh;
+  height: 1800vh;
   width: 100vw;
   margin-top: 70vh; }
 
@@ -384,7 +528,7 @@ video,
 .the-conference .logo-block,
 .the-conference .list-block,
 .the-conference .text-block {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: #b3e5ef;
   padding: 17.5px 30px; }
 
 @media all and (min-width: 768px) {
@@ -408,7 +552,7 @@ video,
   margin-bottom: 17.5px; }
 
 .keynotes .keynote-block {
-  background-color: #2ab0c9;
+  background-color: #b3e5ef;
   margin: 17.5px 0;
   display: block;
   text-decoration: none;
@@ -424,7 +568,7 @@ video,
     height: 0;
     border-left: 10px solid transparent;
     border-right: 10px solid transparent;
-    border-bottom: 10px solid #2ab0c9;
+    border-bottom: 10px solid #b3e5ef;
     position: absolute;
     margin-left: 30px;
     margin-top: -12px;
@@ -462,6 +606,36 @@ video,
 
 .partner-award h2 {
   color: rgba(0, 0, 0, 0.7); }
+
+.speakers h1 span {
+  font-size: 12px;
+  text-transform: uppercase; }
+
+.speakers .speakers-block {
+  margin: 0 1vw;
+  text-decoration: none;
+  display: block;
+  width: 90px;
+  height: 90px; }
+  @media all and (min-width: 1200px) {
+    .speakers .speakers-block {
+      margin: 0 20px; } }
+  .speakers .speakers-block img {
+    min-width: 80px;
+    max-width: 9vw; }
+    @media all and (min-width: 1200px) {
+      .speakers .speakers-block img {
+        max-width: 110px; } }
+
+.speakers .speakers-info-block {
+  display: grid;
+  display: -ms-grid;
+  grid-template-columns: 50% 50%; }
+
+.speakers .speakers-display-container,
+.speakers .speakers-initial-container {
+  display: grid;
+  display: -ms-grid; }
 
 /*css specific to the footer*/
 span.footer-text {
