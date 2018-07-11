@@ -68,16 +68,14 @@ $('.menu-item').mouseleave(shrinkMenu);
     element.style.gridArea = thisElement
   })
 
-  $('.speakers-initial-container').map(function(index,element) {
+  // $('.speakers-container').map(function(index,element) {
 
-    $('.speakers-block').map(function(ind,elem) {
-      $(element).append(elem);
-      // console.log(elem);
-    })
-    console.log(element);
+    // $('.speakers-block').map(function(ind,elem) {
+    //   $(element).append(elem);
+    // })
 
-    element.style.gridTemplateAreas = "'speaker5 speaker4 speaker3'"
-  })
+    // element.style.gridTemplateAreas = "'speaker5 speaker4 speaker3'"
+  // })
 
 })()
 

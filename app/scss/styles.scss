@@ -28,14 +28,18 @@ h1 {
   padding-top: 40px;
   letter-spacing: 1px;
 
-  @media all and (min-width: 520px) and (max-width: 1199px) {
+  @media all and (min-width: 520px) {
     font-size: 7vw;
     letter-spacing: .2vw;
   }
 
-  @media all and (min-width: 1200px) {
-    font-size: 80px;
+  @media all and (min-width: 991px) {
+    font-size: 9vw;
     letter-spacing: 2px;
+  }
+
+  @media all and (min-width: 1200px) {
+    font-size: 8vw;
   }
 }
 
@@ -134,10 +138,10 @@ h1,
 h2,
 h3,
 h4,
-.offset-image-container,
 .text-block,
 .bullet-list,
-.video-container {
+.video-container,
+.speakers-container {
   z-index: 1;
   position: relative;
 }
@@ -210,7 +214,6 @@ h4,
   display: grid;
 
   @media all and (min-width: 768px) {
-    margin-right: 25px;
     -ms-grid-column: 1;
   }
 
@@ -818,45 +821,317 @@ video,
 
 .speakers {
   h1 {
+    padding-top: 0;
     span {
       font-size: 12px;
       text-transform: uppercase;
+      display: block;
+      padding-left: 9px;
     }
   }
 
+  .title-block {
+    position: relative;
+  }
+
   .speakers-block {
-    margin: 0 1vw;
+    // margin: 0 1vw;
     text-decoration: none;
     display: block;
-    width: 90px;
-    height: 90px;
+    width: 25vw;
+    height: 45vw;
 
-    @media all and (min-width: 1200px) {
-      margin: 0 20px;
+    @media all and (min-width: 520px) {
+      width: 25vw;
+      height: 35vw;
+    }
+
+    @media all and (min-width: 768px) {
+      width: 15vw;
+      height: 20vw;
+    }
+
+    @media all and (min-width: 991px) {
+      width: 12vw;
+      height: 12vw;
     }
 
     img {
       min-width: 80px;
-      max-width: 9vw;
+      max-width: 30vw;
+
+      @media all and (min-width: 520px) {
+        max-width:26vw;
+      }
+
+      @media all and (min-width: 768px) {
+        max-width: 14vw;
+      }
+
+      @media all and (min-width: 991px) {
+        max-width: 9vw;
+      }
 
       @media all and (min-width: 1200px) {
-        max-width: 110px;
+        max-width: 8vw;
       }
     }
   }
 
+  .speakers-container,
   .speakers-info-block {
     display: grid;
     display: -ms-grid;
-    grid-template-columns: 50% 50%;
   }
 
-  .speakers-display-container,
-  .speakers-initial-container {
-    display: grid;
-    display: -ms-grid;
-    // grid-template-columns: 50% 50%;
+  .speakers-info-block {
+    grid-template-columns: 50% 50%;
 
+    &.numbers {
+      height: 65vw;
+
+      @media all and (min-width: 520px) {
+        height: 63vw;
+      }
+
+      @media all and (min-width: 768px) {
+        height: 20vw;
+      }
+
+      @media all and (min-width: 991px) {
+        height: 12vw;
+      }
+
+      .split-content-block {
+        width: 66vw;
+        height: 63vw;
+        padding: 4vw;
+        background-color: rgba(42, 176, 201, 0.7);
+
+        @media all and (min-width: 520px) {
+          width: 63vw;
+          height: 55vw;
+        }
+
+        @media all and (min-width: 768px) {
+          width: 37vw;
+          height: 45vw;
+          padding: 2vw;
+        }
+
+        @media all and (min-width: 991px) {
+          width: 23vw;
+          height: 35vw;
+        }
+
+        @media all and (min-width: 1200px) {
+          width: 20vw;
+          height: 34vw;
+        }
+      }
+    }
+    &.quote {
+      height: 65vw;
+
+      @media all and (min-width: 520px) {
+        height: 63vw;
+      }
+
+      @media all and (min-width: 768px) {
+        height: 20vw;
+      }
+
+      @media all and (min-width: 991px) {
+        height: 12vw;
+      }
+
+      .split-content-block {
+        width: 66vw;
+        background-color: rgba(255, 212, 106, 0.7);
+        padding: 4vw;
+
+        @media all and (min-width: 520px) {
+          width: 61vw;
+          height: 50vw;
+        }
+
+        @media all and (min-width: 768px) {
+          width: 64vw;
+          height: 20vw;
+          padding: 2vw;
+        }
+
+        @media all and (min-width: 991px) {
+          width: 41vw;
+          height: 20vw;
+        }
+
+        @media all and (min-width: 1200px) {
+          width: 36vw;
+          height: 19vw;
+        }
+      }
+    }
+
+    .split-content-block {
+      margin: 0;
+    }
+  }
+
+  .speakers-container {
+    grid-column-gap:3vw;
+    grid-row-gap: 3vw;
+
+    // grid-template-areas:
+      // "speaker0"
+      // "speaker3"
+      // "speaker4"
+      // "speaker5"
+      // "speaker6"
+      // "speaker7"
+      // "speaker1"
+      // "speaker8"
+      // "speaker9"
+      // "speaker10"
+      // "speaker11"
+      // "speaker2"
+      // "speaker12"
+      // "speaker13"
+      // "speaker14"
+      // "speaker15"
+      // "speaker16"
+      // "speaker17"
+      // "speaker18"
+      // "speaker19"
+      // "speaker20"
+      // "speaker21"
+      // "speaker22"
+      // "speaker23"
+      // "speaker24"
+      // "speaker25"
+      // "speaker26"
+      // "speaker27"
+      // "speaker28"
+      // "speaker29"
+      // "speaker30"
+      // "speaker31"
+      // "speaker32"
+      // "speaker33"
+      // "speaker34"
+      // "speaker35"
+      // "speaker36"
+      // "speaker37"
+      // "speaker38"
+      // "speaker39"
+      // "speaker40"
+      // "speaker41"
+      // "speaker42"
+      // "speaker43"
+      // "speaker44"
+      // "speaker45"
+      // "speaker46"
+      // "speaker47"
+      // "speaker48"
+      // "speaker49"
+      // "speaker50";
+
+    // @media all and (min-width: 520px) {
+      grid-template-areas:
+        "speaker0 ."
+        "speaker3 speaker4"
+        "speaker5 speaker6"
+        "speaker7 speaker8"
+        "speaker1 ."
+        ". ."
+        ". ."
+        "speaker9 speaker10"
+        "speaker11 speaker12"
+        "speaker2 ."
+        ". ."
+        ". ."
+        "speaker13 speaker14"
+        "speaker15 speaker16"
+        "speaker17 speaker18"
+        "speaker19 speaker20"
+        "speaker21 speaker22"
+        "speaker23 speaker24"
+        "speaker25 speaker26"
+        "speaker27 speaker28"
+        "speaker29 speaker30"
+        "speaker31 speaker32"
+        "speaker33 speaker34"
+        "speaker35 speaker36"
+        "speaker37 speaker38"
+        "speaker39 speaker40"
+        "speaker41 speaker42"
+        "speaker43 speaker44"
+        "speaker45 speaker46"
+        "speaker47 speaker48"
+        "speaker49 speaker50";
+
+    // }
+
+    @media all and (min-width: 768px) {
+      grid-template-areas:
+        "speaker0 . ."
+        "speaker3 speaker4 speaker5"
+        "speaker6 speaker1 ."
+        "speaker7 . ."
+        "speaker8 . ."
+        "speaker9 speaker10 speaker11"
+        "speaker2 . ."
+        ". . ."
+        "speaker12 speaker13 speaker14"
+        "speaker15 speaker16 speaker17"
+        "speaker18 speaker19 speaker20"
+        "speaker21 speaker22 speaker23"
+        "speaker24 speaker25 speaker26"
+        "speaker27 speaker28 speaker29"
+        "speaker30 speaker31 speaker32"
+        "speaker33 speaker34 speaker35"
+        "speaker36 speaker37 speaker38"
+        "speaker39 speaker40 speaker41"
+        "speaker42 speaker43 speaker44"
+        "speaker45 speaker46 speaker47"
+        "speaker48 speaker49 speaker50";
+    }
+
+    @media all and (min-width: 991px) {
+      grid-template-areas:
+        "speaker0 . . speaker3"
+        "speaker4 speaker5 speaker6 speaker7"
+        "speaker8 speaker9 speaker1 . "
+        "speaker10 speaker11 . ."
+        "speaker12 speaker13 . ."
+        "speaker14 speaker15 speaker16 speaker17"
+        "speaker18 speaker19 speaker20 speaker21"
+        "speaker2 . . speaker22"
+        ". . . speaker23"
+        "speaker24 speaker25 speaker26 speaker27"
+        "speaker28 speaker29 speaker30 speaker31"
+        "speaker32 speaker33 speaker34 speaker35"
+        "speaker36 speaker37 speaker38 speaker39"
+        "speaker40 speaker41 speaker42 speaker43"
+        "speaker44 speaker45 speaker46 speaker47"
+        "speaker48 speaker49 speaker50 speaker51";
+    }
+
+    @media all and (min-width: 1200px) {
+      grid-template-areas:
+        "speaker0 . . speaker3 speaker4"
+        "speaker5 speaker6 speaker7 speaker8 speaker9"
+        "speaker10 speaker11 speaker12 speaker1 ."
+        "speaker13 speaker14 speaker15 . ."
+        "speaker16 speaker17 speaker18 . ."
+        "speaker19 speaker20 speaker21 speaker22 speaker23"
+        "speaker2 . . speaker24 speaker25"
+        ". . . speaker26 speaker27"
+        "speaker28 speaker29 speaker30 speaker31 speaker32"
+        "speaker33 speaker34 speaker35 speaker36 speaker37"
+        "speaker38 speaker39 speaker40 speaker41 speaker42"
+        "speaker43 speaker44 speaker45 speaker46 speaker47"
+        "speaker48 speaker49 speaker50 speaker51 speaker52";
+    }
   }
 }
 

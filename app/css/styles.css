@@ -22,14 +22,17 @@ h1 {
   font-size: 28px;
   padding-top: 40px;
   letter-spacing: 1px; }
-  @media all and (min-width: 520px) and (max-width: 1199px) {
+  @media all and (min-width: 520px) {
     h1 {
       font-size: 7vw;
       letter-spacing: .2vw; } }
+  @media all and (min-width: 991px) {
+    h1 {
+      font-size: 9vw;
+      letter-spacing: 2px; } }
   @media all and (min-width: 1200px) {
     h1 {
-      font-size: 80px;
-      letter-spacing: 2px; } }
+      font-size: 8vw; } }
 
 h2 {
   font-weight: 900;
@@ -107,10 +110,10 @@ h1,
 h2,
 h3,
 h4,
-.offset-image-container,
 .text-block,
 .bullet-list,
-.video-container {
+.video-container,
+.speakers-container {
   z-index: 1;
   position: relative; }
 
@@ -169,7 +172,6 @@ h4,
   display: grid; }
   @media all and (min-width: 768px) {
     .content-block {
-      margin-right: 25px;
       -ms-grid-column: 1; } }
   .content-block p {
     padding: 5px 0; }
@@ -607,35 +609,138 @@ video,
 .partner-award h2 {
   color: rgba(0, 0, 0, 0.7); }
 
-.speakers h1 span {
-  font-size: 12px;
-  text-transform: uppercase; }
+.speakers h1 {
+  padding-top: 0; }
+  .speakers h1 span {
+    font-size: 12px;
+    text-transform: uppercase;
+    display: block;
+    padding-left: 9px; }
+
+.speakers .title-block {
+  position: relative; }
 
 .speakers .speakers-block {
-  margin: 0 1vw;
   text-decoration: none;
   display: block;
-  width: 90px;
-  height: 90px; }
-  @media all and (min-width: 1200px) {
+  width: 25vw;
+  height: 45vw; }
+  @media all and (min-width: 520px) {
     .speakers .speakers-block {
-      margin: 0 20px; } }
+      width: 25vw;
+      height: 35vw; } }
+  @media all and (min-width: 768px) {
+    .speakers .speakers-block {
+      width: 15vw;
+      height: 20vw; } }
+  @media all and (min-width: 991px) {
+    .speakers .speakers-block {
+      width: 12vw;
+      height: 12vw; } }
   .speakers .speakers-block img {
     min-width: 80px;
-    max-width: 9vw; }
+    max-width: 30vw; }
+    @media all and (min-width: 520px) {
+      .speakers .speakers-block img {
+        max-width: 26vw; } }
+    @media all and (min-width: 768px) {
+      .speakers .speakers-block img {
+        max-width: 14vw; } }
+    @media all and (min-width: 991px) {
+      .speakers .speakers-block img {
+        max-width: 9vw; } }
     @media all and (min-width: 1200px) {
       .speakers .speakers-block img {
-        max-width: 110px; } }
+        max-width: 8vw; } }
 
+.speakers .speakers-container,
 .speakers .speakers-info-block {
   display: grid;
-  display: -ms-grid;
-  grid-template-columns: 50% 50%; }
-
-.speakers .speakers-display-container,
-.speakers .speakers-initial-container {
-  display: grid;
   display: -ms-grid; }
+
+.speakers .speakers-info-block {
+  grid-template-columns: 50% 50%; }
+  .speakers .speakers-info-block.numbers {
+    height: 65vw; }
+    @media all and (min-width: 520px) {
+      .speakers .speakers-info-block.numbers {
+        height: 63vw; } }
+    @media all and (min-width: 768px) {
+      .speakers .speakers-info-block.numbers {
+        height: 20vw; } }
+    @media all and (min-width: 991px) {
+      .speakers .speakers-info-block.numbers {
+        height: 12vw; } }
+    .speakers .speakers-info-block.numbers .split-content-block {
+      width: 66vw;
+      height: 63vw;
+      padding: 4vw;
+      background-color: rgba(42, 176, 201, 0.7); }
+      @media all and (min-width: 520px) {
+        .speakers .speakers-info-block.numbers .split-content-block {
+          width: 63vw;
+          height: 55vw; } }
+      @media all and (min-width: 768px) {
+        .speakers .speakers-info-block.numbers .split-content-block {
+          width: 37vw;
+          height: 45vw;
+          padding: 2vw; } }
+      @media all and (min-width: 991px) {
+        .speakers .speakers-info-block.numbers .split-content-block {
+          width: 23vw;
+          height: 35vw; } }
+      @media all and (min-width: 1200px) {
+        .speakers .speakers-info-block.numbers .split-content-block {
+          width: 20vw;
+          height: 34vw; } }
+  .speakers .speakers-info-block.quote {
+    height: 65vw; }
+    @media all and (min-width: 520px) {
+      .speakers .speakers-info-block.quote {
+        height: 63vw; } }
+    @media all and (min-width: 768px) {
+      .speakers .speakers-info-block.quote {
+        height: 20vw; } }
+    @media all and (min-width: 991px) {
+      .speakers .speakers-info-block.quote {
+        height: 12vw; } }
+    .speakers .speakers-info-block.quote .split-content-block {
+      width: 66vw;
+      background-color: rgba(255, 212, 106, 0.7);
+      padding: 4vw; }
+      @media all and (min-width: 520px) {
+        .speakers .speakers-info-block.quote .split-content-block {
+          width: 61vw;
+          height: 50vw; } }
+      @media all and (min-width: 768px) {
+        .speakers .speakers-info-block.quote .split-content-block {
+          width: 64vw;
+          height: 20vw;
+          padding: 2vw; } }
+      @media all and (min-width: 991px) {
+        .speakers .speakers-info-block.quote .split-content-block {
+          width: 41vw;
+          height: 20vw; } }
+      @media all and (min-width: 1200px) {
+        .speakers .speakers-info-block.quote .split-content-block {
+          width: 36vw;
+          height: 19vw; } }
+  .speakers .speakers-info-block .split-content-block {
+    margin: 0; }
+
+.speakers .speakers-container {
+  grid-column-gap: 3vw;
+  grid-row-gap: 3vw;
+  grid-template-areas: "speaker0 ." "speaker3 speaker4" "speaker5 speaker6" "speaker7 speaker8" "speaker1 ." ". ." ". ." "speaker9 speaker10" "speaker11 speaker12" "speaker2 ." ". ." ". ." "speaker13 speaker14" "speaker15 speaker16" "speaker17 speaker18" "speaker19 speaker20" "speaker21 speaker22" "speaker23 speaker24" "speaker25 speaker26" "speaker27 speaker28" "speaker29 speaker30" "speaker31 speaker32" "speaker33 speaker34" "speaker35 speaker36" "speaker37 speaker38" "speaker39 speaker40" "speaker41 speaker42" "speaker43 speaker44" "speaker45 speaker46" "speaker47 speaker48" "speaker49 speaker50"; }
+  @media all and (min-width: 768px) {
+    .speakers .speakers-container {
+      grid-template-areas: "speaker0 . ." "speaker3 speaker4 speaker5" "speaker6 speaker1 ." "speaker7 . ." "speaker8 . ." "speaker9 speaker10 speaker11" "speaker2 . ." ". . ." "speaker12 speaker13 speaker14" "speaker15 speaker16 speaker17" "speaker18 speaker19 speaker20" "speaker21 speaker22 speaker23" "speaker24 speaker25 speaker26" "speaker27 speaker28 speaker29" "speaker30 speaker31 speaker32" "speaker33 speaker34 speaker35" "speaker36 speaker37 speaker38" "speaker39 speaker40 speaker41" "speaker42 speaker43 speaker44" "speaker45 speaker46 speaker47" "speaker48 speaker49 speaker50"; } }
+  @media all and (min-width: 991px) {
+    .speakers .speakers-container {
+      grid-template-areas: "speaker0 . . speaker3" "speaker4 speaker5 speaker6 speaker7" "speaker8 speaker9 speaker1 . " "speaker10 speaker11 . ." "speaker12 speaker13 . ." "speaker14 speaker15 speaker16 speaker17" "speaker18 speaker19 speaker20 speaker21" "speaker2 . . speaker22" ". . . speaker23" "speaker24 speaker25 speaker26 speaker27" "speaker28 speaker29 speaker30 speaker31" "speaker32 speaker33 speaker34 speaker35" "speaker36 speaker37 speaker38 speaker39" "speaker40 speaker41 speaker42 speaker43" "speaker44 speaker45 speaker46 speaker47" "speaker48 speaker49 speaker50 speaker51"; } }
+  @media all and (min-width: 1200px) {
+    .speakers .speakers-container {
+      grid-template-areas: "speaker0 . . speaker3 speaker4" "speaker5 speaker6 speaker7 speaker8 speaker9" "speaker10 speaker11 speaker12 speaker1 ." "speaker13 speaker14 speaker15 . ." "speaker16 speaker17 speaker18 . ." "speaker19 speaker20 speaker21 speaker22 speaker23" "speaker2 . . speaker24 speaker25" ". . . speaker26 speaker27" "speaker28 speaker29 speaker30 speaker31 speaker32" "speaker33 speaker34 speaker35 speaker36 speaker37" "speaker38 speaker39 speaker40 speaker41 speaker42" "speaker43 speaker44 speaker45 speaker46 speaker47" "speaker48 speaker49 speaker50 speaker51 speaker52"; } }
 
 /*css specific to the footer*/
 span.footer-text {
