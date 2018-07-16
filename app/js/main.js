@@ -67,17 +67,27 @@ $('.menu-item').mouseleave(shrinkMenu);
     var thisElement = 'speaker' + index
     element.style.gridArea = thisElement
   })
-
-  // $('.speakers-container').map(function(index,element) {
-
-    // $('.speakers-block').map(function(ind,elem) {
-    //   $(element).append(elem);
-    // })
-
-    // element.style.gridTemplateAreas = "'speaker5 speaker4 speaker3'"
-  // })
-
 })()
+
+
+function peopleSayingHeight() {
+  var leftColumnVideoHeight = $(".the-conference .left-column video")[0].clientHeight;
+  var leftColumnLogosHeight = $(".the-conference .left-column .logo-block")[0].clientHeight;
+  var leftColumnImageHeight = $(".the-conference .left-column .whole-content-block .image-block")[0].clientHeight;
+
+  var textHeight = $(".the-conference .right-column .text-block")[0].clientHeight;
+  var imgHeight = $(".the-conference .right-column .image-block")[0].clientHeight;
+  var list = $(".the-conference .list-block");
+  var listHeight = list[0].clientHeight;
+
+  var containerHeight = '';
+
+  containerHeight = (leftColumnVideoHeight + leftColumnLogosHeight + leftColumnImageHeight) - (textHeight + imgHeight);
+  list.css('height', containerHeight);
+}
+
+$(window).on('load', peopleSayingHeight);
+$(window).on('resize', peopleSayingHeight);
 
 
 function showPage() {
