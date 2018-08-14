@@ -19,39 +19,10 @@
     <div class="page-cover"></div>
 
 
-
-
-    <!--navigation-->
-
-    <!-- <nav role="navigation"> -->
-      <!-- <div id="menuToggle"> -->
-        <!--A fake / hidden checkbox is used as click reciever, so you can use the :checked selector on it.-->
-        <!-- <input type="checkbox" />
-
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span> -->
-
-        <!-- <ul id="menu"> -->
-          <!-- <li class='child-menu-item menu-item logo'>
-            <a href="#" ><img src='steve-logo.svg'></a>
-          </li>
-          <li class='child-menu-item menu-item'>
-            <a href="/contact" id="Page1Link" >Contacts</a>
-          </li>
-          <li class='child-menu-item menu-item'>
-            <a href="/events" id="Page2Link" >Events</a>
-          </li> -->
-        <!-- </ul> -->
-      <!-- </div> -->
-    <!-- </nav> -->
-
-
-
+    <!--top navigation-->
     <nav role="navigation">
-      <div id="menuToggle">
+      <div id="menuToggle" class="pardot-wrapper" pardot-region="navigation" pardot-region-type="html">
 
-        <!--A fake / hidden checkbox is used as click reciever, so you can use the :checked selector on it.-->
         <input type="checkbox" />
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
@@ -75,34 +46,51 @@
       </div>
     </nav>
 
-    <div id="wrapper">
-      <div id="clock-a"></div>
-      <div id="clock-b"></div>
-      <div id="clock-c"></div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="content-section">
+          <div class='content-block'>
+            <div class='split-content-block col-50-50'>
+              <div class="left-column"></div>
+              <div class="right-column"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
 
-
-
+    <!--page wrapper-->
 
     <div class="page-wrapper" id='outer'>
       <div class="page-bg"></div>
-      <div class="page-video-container"><
-        <video autoplay loop>
-          <source src="images/PIE2019-page-top-video.mp4" type='video/mp4' codecs='avc1.42E01E' />
+      <div class="page-video-container pardot-wrapper" pardot-region="top-video" pardot-region-type="html">
+
+        <!--change video-->
+        <video autoplay="" muted="" loop="" src="https://cipherhealth.com/wp-content/uploads/2018/07/PIE2019-page-top-video-1.mp4">
+          <source src="https://cipherhealth.com/wp-content/uploads/2018/07/PIE2019-page-top-video-1.mp4" type='video/mp4' codecs='avc1.42E01E' />
         </video>
       </div>
+
+      <!--change image (Cipher logo)-->
       <div class='page-container'>
-        <a class="cipher-logo" href="https://cipherhealth.com">CipherHealth</a>
+        <a class="cipher-logo" href="https://cipherhealth.com"><img src='https://cipherhealth.com/wp-content/uploads/2017/03/cipherlogo.svg'></a>
         <div class='inner-page-container'>
 
-          <!--page top-->
-          <div class="content-section page-top">
+          <!--page top (first section)-->
+          <div class="content-section page-top video">
             <div class='content-block' id='page-top-inner'>
+
+              <!--change image (Partners logo)-->
               <div class='whole-content-block'>
                 <img src='https://cipherhealth.com/wp-content/uploads/2018/06/Partners-logo.png'>
               </div>
-              <div class='split-content-block col-66-34'>
+
+              <!--change text-->
+              <div class="split-content-block col-66-34 pardot-wrapper" pardot-region="top-content" pardot-region-type="html">
                 <div class='text-block'>
                   <h4>User Conference</h4>
                   <span>San Diego | June  19-20 2019</span>
@@ -115,6 +103,7 @@
             </div>
           </div>
 
+
           <!--the conference-->
           <div class="content-section the-conference">
             <div class='hex first'>
@@ -122,55 +111,78 @@
             </div>
             <div class='content-block'>
               <div class='whole-content-block'>
+
+                <!--change text (title)-->
                 <h1>The Conference</h1>
               </div>
-              <div class='split-content-block col-66-34'>
+              <div class='split-content-block col-66-34 pardot-wrapper' pardot-region="conference" pardot-region-type="html">
+
+                <!--change video-->
                 <div class="left-column">
                   <div class='whole-content-block'>
-                    <video autoplay loop>
+                    <video autoplay="" muted="" loop="" src="https://cipherhealth.com/wp-content/uploads/2018/06/Cipher-Highlight-5.mp4">
                       <source src="https://cipherhealth.com/wp-content/uploads/2018/06/Cipher-Highlight-5.mp4" type='video/mp4' codecs='avc1.42E01E' />
                     </video>
                   </div>
                   <div class='split-content-block col-66-34'>
+
+                    <!--change image (Participating companies logos)-->
                     <div class='logo-block'>
                       <h4>Participating Companies</h4>
                       <div class="logos">
                         <div class="logo">
                           <img src='https://cipherhealth.com/wp-content/uploads/2018/06/Partners-logo.png'>
                         </div>
+
                         <div class="logo">
                           <img src='https://cipherhealth.com/wp-content/uploads/2018/06/Partners-logo.png'>
                         </div>
+
                         <div class="logo">
                           <img src='https://cipherhealth.com/wp-content/uploads/2018/06/Partners-logo.png'>
                         </div>
+
                         <div class="logo">
                           <img src='https://cipherhealth.com/wp-content/uploads/2018/06/Partners-logo.png'>
                         </div>
+
                         <div class="logo">
                           <img src='https://cipherhealth.com/wp-content/uploads/2018/06/Partners-logo.png'>
                         </div>
+
                         <div class="logo">
                           <img src='https://cipherhealth.com/wp-content/uploads/2018/06/Partners-logo.png'>
                         </div>
+
                       </div>
                     </div>
+
+                    <!--change image-->
                     <div class='image-block' style="background-image:url(https://cipherhealth.com/wp-content/uploads/2018/06/the-conference-img1.jpg);background-size: cover;"></div>
                   </div>
                   <div class='whole-content-block'>
+
+                    <!--change image-->
                     <div class='image-block'>
                       <img src='https://cipherhealth.com/wp-content/uploads/2018/06/the-conference-img2.jpg'>
                     </div>
+
                   </div>
                 </div>
                 <div class="right-column">
                   <div class='whole-content-block'>
+
+                    <!--change text-->
                     <div class='text-block'>
-                      <p class='text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                      <p class='text'>With inspiring keynotes, outstanding education sessions, and valuable networking opportunities the CipherHealth Partners in Excellence Conference 2019 will showcase best practices and proven strategies to achieve the results your team desires. Join your CipherHealth peers for 1 ½ days of collaboration, training, and learning to  advance your skills, achieve superior engagement, and care coordination across the continuum.</p>
                     </div>
+
+                    <!--change image-->
                     <div class='image-block'>
                       <img src='https://cipherhealth.com/wp-content/uploads/2018/06/the-conference-img3.jpg'>
                     </div>
+
+                    <!--change text (quotes)-->
                     <div class='list-block'>
                       <h4>What people are saying</h4>
                       <ul>
@@ -207,10 +219,13 @@
           <div class="content-section keynotes">
             <div class='content-block'>
               <div class='whole-content-block'>
+                <!--change title-->
                 <h1>Keynotes</h1>
               </div>
-              <div class='split-content-block col-33-33-33'>
-                <a href='' class='keynote-block'>
+              <div class='split-content-block col-33-33-33 pardot-wrapper' pardot-region="keynotes" pardot-region-type="html">
+
+                <!--change image and text (all keynotes below)-->
+                <a href='' class='keynote-block show-modal'>
                   <div class="photo-bg"></div>
                   <div class="image-block" style="background-image:url('https://cipherhealth.com/wp-content/uploads/2018/06/the-conference-speaker1_1.jpg');">
                   </div>
@@ -222,7 +237,8 @@
                     <p class='text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                   </div>
                 </a>
-                <a href='' class='keynote-block'>
+
+                <a href='' class='keynote-block show-modal'>
                   <div class="photo-bg"></div>
                   <div class="image-block" style="background-image:url('https://cipherhealth.com/wp-content/uploads/2018/06/the-conference-speaker1_2.jpg');">
                   </div>
@@ -234,7 +250,8 @@
                     <p class='text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
                   </div>
                 </a>
-                <a href='' class='keynote-block'>
+
+                <a href='' class='keynote-block show-modal'>
                   <div class="photo-bg"></div>
                   <div class="image-block" style="background-image:url('https://cipherhealth.com/wp-content/uploads/2018/06/the-conference-speaker1_3.jpg');">
                   </div>
@@ -250,23 +267,30 @@
             </div>
           </div>
 
+
           <!--partner award-->
           <div class="content-section partner-award">
             <div class='hex second'>
               <img src="https://cipherhealth.com/wp-content/uploads/2018/07/hexagon_blue.svg">
             </div>
             <div class='content-block'>
+
+              <!--change title-->
               <div class='whole-content-block'>
                 <h1>Partner Award</h1>
               </div>
-              <div class='split-content-block col-34-66'>
+              <div class='split-content-block col-34-66 pardot-wrapper' pardot-region="partner award" pardot-region-type="html">
+
+                <!--change image-->
                 <div class='image-block'>
                   <img src='https://cipherhealth.com/wp-content/uploads/2018/06/the-conference-speaker1_1.jpg'>
                   <a href='' class='button'><span>Submit Nomination</span></a>
                 </div>
+
+                <!--change text-->
                 <div class='text-block'>
                   <h3>A prize for the thought leaders among us</h3>
-                  <p class='text'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights.</p>
+                  <p class='text'>The CipherHealth Partner Awards recognize clients who have achieved excellence in outcomes and/or use CipherHealth solutions in innovative ways. This is a unique opportunity to hear from high achieving clients who are innovating with the use of our products, reaching organizational goals, and improving the patient and family experience.</p>
                   <h4>Submission Deadline</h4>
                   <h2>August 08</h2>
                 </div>
@@ -278,10 +302,14 @@
           <!--speakers-->
           <div class="content-section speakers">
             <div class='content-block'>
-              <div class='speakers-container'>
+              <div class='speakers-container pardot-wrapper' pardot-region="speakers" pardot-region-type="html">
+
+                <!--change title-->
                 <div class="speakers-block title-block">
                   <h1>Speakers</h1>
                 </div>
+
+                <!--change text (quotes)-->
                 <div class="speakers-block speakers-info-block quote">
                   <div class='whole-content-block'>
                     <div class="quote-symbol">"</div>
@@ -292,10 +320,11 @@
                     </div>
                   </div>
                 </div>
+
+                <!--change text (stats)-->
                 <div class="speakers-block speakers-info-block numbers">
                   <div class='whole-content-block'>
                     <h2>Driving Excellence with Voice is a really excellent thing to do</h2>
-
                     <div class='split-content-block col-33-33-33'>
                       <h1>12<span>Companies</span></h1>
                       <h1>12<span>Speakers</span></h1>
@@ -305,186 +334,367 @@
                   </div>
                 </div>
 
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+                <!--change text and image (all speakers below)-->
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>John Doe</h5>
-                  <p class='text'>UCSF</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Misty Bevard-Pierce</h5>
-                  <p class='text'>Sentara Healthcare United Hospitals for common good</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
-                <a href='' class='speakers-block'>
-                  <div class="photo-bg"></div>
-                  <img src="images/speaker-photo.jpg">
-                  <h5>Lana Rey</h5>
-                  <p class='text'>Sentara</p>
+
+                <a href='' class='speakers-block show-modal'>
+                  <div class="image-block">
+                    <div class="photo-bg"></div>
+                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
+                  </div>
+                  <div class="text-block">
+                    <h5>Lana Rey</h5>
+                    <p class='text'>Sentara</p>
+                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                  </div>
                 </a>
+
               </div>
             </div>
           </div>
@@ -498,283 +708,341 @@
               <img src="https://cipherhealth.com/wp-content/uploads/2018/07/hexagon_blue.svg">
             </div>
             <div class='content-block'>
+
+              <!--change title-->
               <div class='whole-content-block'>
                 <h1>Program</h1>
               </div>
-              <div class="day-selector">
+
+              <div class="days-selector">
                 <div class='day selected-day'>June 19</div>
                 <div class='day'>June 20</div>
               </div>
-              <div class="program-day day-one expanded">
-                <a href='' class='session-block'>
-                  <div class='split-content-block col-66-34'>
-                    <div class='text-block'>
-                      <h3>Registration & Networking Breakfast</h3>
-                      <p class='text'>Shawn Lemerise</p>
+
+              <!--change image and text (all sessions listed below)-->
+              <div class="program-container pardot-wrapper" pardot-region="program" pardot-region-type="html">
+
+                <!--day one-->
+                <div class="program-day day-one expanded">
+                  <a href='' class='session-block show-modal'>
+                    <div class='split-content-block col-66-34 text-block'>
+                      <div class='title-block'>
+                        <h3>Registration & Networking Breakfast</h3>
+                        <p class='text'>Shawn Lemerise</p>
+                        <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                      </div>
+                      <div class='date-block'>
+                        <p class='text'>7:30-8:15</p>
+                      </div>
                     </div>
-                    <div class='date-block'>
-                      <p class='text'>7:30-8:15</p>
+                  </a>
+
+                  <a href='' class='session-block show-modal'>
+                    <div class='split-content-block col-66-34 text-block'>
+                      <div class='title-block'>
+                        <h3>Registration & Networking Breakfast</h3>
+                        <p class='text'>Shawn Lemerise</p>
+                        <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                      </div>
+                      <div class='date-block'>
+                        <p class='text'>7:30-8:15</p>
+                      </div>
                     </div>
-                  </div>
-                </a>
-                <a href='' class='session-block'>
-                  <div class='split-content-block col-66-34'>
-                    <div class='text-block'>
-                      <h3>Registration & Networking Breakfast</h3>
-                      <p class='text'>Shawn Lemerise</p>
+                  </a>
+
+                  <a href='' class='session-block show-modal'>
+                    <div class='split-content-block col-66-34 text-block'>
+                      <div class='title-block'>
+                        <h3>Registration & Networking Breakfast</h3>
+                        <p class='text'>Shawn Lemerise</p>
+                        <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                      </div>
+                      <div class='date-block'>
+                        <p class='text'>7:30-8:15</p>
+                      </div>
                     </div>
-                    <div class='date-block'>
-                      <p class='text'>7:30-8:15</p>
+                  </a>
+
+                  <a href='' class='session-block show-modal'>
+                    <div class='split-content-block col-66-34 text-block'>
+                      <div class='title-block'>
+                        <h3>Registration & Networking Breakfast</h3>
+                        <p class='text'>Shawn Lemerise</p>
+                        <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                      </div>
+                      <div class='date-block'>
+                        <p class='text'>7:30-8:15</p>
+                      </div>
                     </div>
-                  </div>
-                </a>
-                <a href='' class='session-block'>
-                  <div class='split-content-block col-66-34'>
-                    <div class='text-block'>
-                      <h3>Registration & Networking Breakfast</h3>
-                      <p class='text'>Shawn Lemerise</p>
+                  </a>
+
+                  <a href='' class='session-block show-modal'>
+                    <div class='split-content-block col-66-34 text-block'>
+                      <div class='title-block'>
+                        <h3>Registration & Networking Breakfast</h3>
+                        <p class='text'>Shawn Lemerise</p>
+                        <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                      </div>
+                      <div class='date-block'>
+                        <p class='text'>7:30-8:15</p>
+                      </div>
                     </div>
-                    <div class='date-block'>
-                      <p class='text'>7:30-8:15</p>
+                  </a>
+
+                  <a href='' class='session-block show-modal'>
+                    <div class='split-content-block col-66-34 text-block'>
+                      <div class='title-block'>
+                        <h3>Registration & Networking Breakfast</h3>
+                        <p class='text'>Shawn Lemerise</p>
+                        <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                      </div>
+                      <div class='date-block'>
+                        <p class='text'>7:30-8:15</p>
+                      </div>
                     </div>
-                  </div>
-                </a>
-                <a href='' class='session-block'>
-                  <div class='split-content-block col-66-34'>
-                    <div class='text-block'>
-                      <h3>Registration & Networking Breakfast</h3>
-                      <p class='text'>Shawn Lemerise</p>
+                  </a>
+
+                  <a href='' class='session-block show-modal'>
+                    <div class='split-content-block col-66-34 text-block'>
+                      <div class='title-block'>
+                        <h3>Registration & Networking Breakfast</h3>
+                        <p class='text'>Shawn Lemerise</p>
+                        <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                      </div>
+                      <div class='date-block'>
+                        <p class='text'>7:30-8:15</p>
+                      </div>
                     </div>
-                    <div class='date-block'>
-                      <p class='text'>7:30-8:15</p>
+                  </a>
+
+                  <a href='' class='session-block show-modal'>
+                    <div class='split-content-block col-66-34 text-block'>
+                      <div class='title-block'>
+                        <h3>Registration & Networking Breakfast</h3>
+                        <p class='text'>Shawn Lemerise</p>
+                        <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                      </div>
+                      <div class='date-block'>
+                        <p class='text'>7:30-8:15</p>
+                      </div>
                     </div>
-                  </div>
-                </a>
-                <a href='' class='session-block'>
-                  <div class='split-content-block col-66-34'>
-                    <div class='text-block'>
-                      <h3>Registration & Networking Breakfast</h3>
-                      <p class='text'>Shawn Lemerise</p>
+                  </a>
+
+                  <a href='' class='session-block show-modal'>
+                    <div class='split-content-block col-66-34 text-block'>
+                      <div class='title-block'>
+                        <h3>Registration & Networking Breakfast</h3>
+                        <p class='text'>Shawn Lemerise</p>
+                        <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                      </div>
+                      <div class='date-block'>
+                        <p class='text'>7:30-8:15</p>
+                      </div>
                     </div>
-                    <div class='date-block'>
-                      <p class='text'>7:30-8:15</p>
+                  </a>
+
+                  <a href='' class='session-block show-modal'>
+                    <div class='split-content-block col-66-34 text-block'>
+                      <div class='title-block'>
+                        <h3>Registration & Networking Breakfast</h3>
+                        <p class='text'>Shawn Lemerise</p>
+                        <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                      </div>
+                      <div class='date-block'>
+                        <p class='text'>7:30-8:15</p>
+                      </div>
                     </div>
-                  </div>
-                </a>
-                <a href='' class='session-block'>
-                  <div class='split-content-block col-66-34'>
-                    <div class='text-block'>
-                      <h3>Registration & Networking Breakfast</h3>
-                      <p class='text'>Shawn Lemerise</p>
+                  </a>
+
+                  <a href='' class='session-block show-modal'>
+                    <div class='split-content-block col-66-34 text-block'>
+                      <div class='title-block'>
+                        <h3>Registration & Networking Breakfast</h3>
+                        <p class='text'>Shawn Lemerise</p>
+                        <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                      </div>
+                      <div class='date-block'>
+                        <p class='text'>7:30-8:15</p>
+                      </div>
                     </div>
-                    <div class='date-block'>
-                      <p class='text'>7:30-8:15</p>
+                  </a>
+
+                  <a href='' class='session-block show-modal'>
+                    <div class='split-content-block col-66-34 text-block'>
+                      <div class='title-block'>
+                        <h3>Registration & Networking Breakfast</h3>
+                        <p class='text'>Shawn Lemerise</p>
+                        <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                      </div>
+                      <div class='date-block'>
+                        <p class='text'>7:30-8:15</p>
+                      </div>
                     </div>
-                  </div>
-                </a>
-                <a href='' class='session-block'>
-                  <div class='split-content-block col-66-34'>
-                    <div class='text-block'>
-                      <h3>Registration & Networking Breakfast</h3>
-                      <p class='text'>Shawn Lemerise</p>
+                  </a>
+                </div>
+
+                <!--day two-->
+                <div class="program-day day-two">
+                  <a href='' class='session-block show-modal'>
+                    <div class='split-content-block col-66-34 text-block'>
+                      <div class='title-block'>
+                        <h3>Registration & Networking Breakfast</h3>
+                        <p class='text'>Shawn Lemerise</p>
+                        <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                      </div>
+                      <div class='date-block'>
+                        <p class='text'>7:30-8:15</p>
+                      </div>
                     </div>
-                    <div class='date-block'>
-                      <p class='text'>7:30-8:15</p>
+                  </a>
+
+                  <a href='' class='session-block show-modal'>
+                    <div class='split-content-block col-66-34 text-block'>
+                      <div class='title-block'>
+                        <h3>Registration & Networking Breakfast</h3>
+                        <p class='text'>Shawn Lemerise</p>
+                        <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                      </div>
+                      <div class='date-block'>
+                        <p class='text'>7:30-8:15</p>
+                      </div>
                     </div>
-                  </div>
-                </a>
-                <a href='' class='session-block'>
-                  <div class='split-content-block col-66-34'>
-                    <div class='text-block'>
-                      <h3>Registration & Networking Breakfast</h3>
-                      <p class='text'>Shawn Lemerise</p>
+                  </a>
+
+                  <a href='' class='session-block show-modal'>
+                    <div class='split-content-block col-66-34 text-block'>
+                      <div class='title-block'>
+                        <h3>Registration & Networking Breakfast</h3>
+                        <p class='text'>Shawn Lemerise</p>
+                        <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                      </div>
+                      <div class='date-block'>
+                        <p class='text'>7:30-8:15</p>
+                      </div>
                     </div>
-                    <div class='date-block'>
-                      <p class='text'>7:30-8:15</p>
+                  </a>
+
+                  <a href='' class='session-block show-modal'>
+                    <div class='split-content-block col-66-34 text-block'>
+                      <div class='title-block'>
+                        <h3>Registration & Networking Breakfast</h3>
+                        <p class='text'>Shawn Lemerise</p>
+                        <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                      </div>
+                      <div class='date-block'>
+                        <p class='text'>7:30-8:15</p>
+                      </div>
                     </div>
-                  </div>
-                </a>
-                <a href='' class='session-block'>
-                  <div class='split-content-block col-66-34'>
-                    <div class='text-block'>
-                      <h3>Registration & Networking Breakfast</h3>
-                      <p class='text'>Shawn Lemerise</p>
+                  </a>
+
+                  <a href='' class='session-block show-modal'>
+                    <div class='split-content-block col-66-34 text-block'>
+                      <div class='title-block'>
+                        <h3>Registration & Networking Breakfast</h3>
+                        <p class='text'>Shawn Lemerise</p>
+                        <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                      </div>
+                      <div class='date-block'>
+                        <p class='text'>7:30-8:15</p>
+                      </div>
                     </div>
-                    <div class='date-block'>
-                      <p class='text'>7:30-8:15</p>
+                  </a>
+
+                  <a href='' class='session-block show-modal'>
+                    <div class='split-content-block col-66-34 text-block'>
+                      <div class='title-block'>
+                        <h3>Registration & Networking Breakfast</h3>
+                        <p class='text'>Shawn Lemerise</p>
+                        <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                      </div>
+                      <div class='date-block'>
+                        <p class='text'>7:30-8:15</p>
+                      </div>
                     </div>
-                  </div>
-                </a>
-                <a href='' class='session-block'>
-                  <div class='split-content-block col-66-34'>
-                    <div class='text-block'>
-                      <h3>Registration & Networking Breakfast</h3>
-                      <p class='text'>Shawn Lemerise</p>
+                  </a>
+
+                  <a href='' class='session-block show-modal'>
+                    <div class='split-content-block col-66-34 text-block'>
+                      <div class='title-block'>
+                        <h3>Registration & Networking Breakfast</h3>
+                        <p class='text'>Shawn Lemerise</p>
+                        <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                      </div>
+                      <div class='date-block'>
+                        <p class='text'>7:30-8:15</p>
+                      </div>
                     </div>
-                    <div class='date-block'>
-                      <p class='text'>7:30-8:15</p>
+                  </a>
+
+                  <a href='' class='session-block show-modal'>
+                    <div class='split-content-block col-66-34 text-block'>
+                      <div class='title-block'>
+                        <h3>Registration & Networking Breakfast</h3>
+                        <p class='text'>Shawn Lemerise</p>
+                        <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                      </div>
+                      <div class='date-block'>
+                        <p class='text'>7:30-8:15</p>
+                      </div>
                     </div>
-                  </div>
-                </a>
-                <a href='' class='session-block'>
-                  <div class='split-content-block col-66-34'>
-                    <div class='text-block'>
-                      <h3>Registration & Networking Breakfast</h3>
-                      <p class='text'>Shawn Lemerise</p>
+                  </a>
+
+                  <a href='' class='session-block show-modal'>
+                    <div class='split-content-block col-66-34 text-block'>
+                      <div class='title-block'>
+                        <h3>Registration & Networking Breakfast</h3>
+                        <p class='text'>Shawn Lemerise</p>
+                        <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                      </div>
+                      <div class='date-block'>
+                        <p class='text'>7:30-8:15</p>
+                      </div>
                     </div>
-                    <div class='date-block'>
-                      <p class='text'>7:30-8:15</p>
+                  </a>
+
+                  <a href='' class='session-block show-modal'>
+                    <div class='split-content-block col-66-34 text-block'>
+                      <div class='title-block'>
+                        <h3>Registration & Networking Breakfast</h3>
+                        <p class='text'>Shawn Lemerise</p>
+                        <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                      </div>
+                      <div class='date-block'>
+                        <p class='text'>7:30-8:15</p>
+                      </div>
                     </div>
-                  </div>
-                </a>
-                <a href='' class='session-block'>
-                  <div class='split-content-block col-66-34'>
-                    <div class='text-block'>
-                      <h3>Registration & Networking Breakfast</h3>
-                      <p class='text'>Shawn Lemerise</p>
+                  </a>
+
+                  <a href='' class='session-block show-modal'>
+                    <div class='split-content-block col-66-34 text-block'>
+                      <div class='title-block'>
+                        <h3>Registration & Networking Breakfast</h3>
+                        <p class='text'>Shawn Lemerise</p>
+                        <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                      </div>
+                      <div class='date-block'>
+                        <p class='text'>7:30-8:15</p>
+                      </div>
                     </div>
-                    <div class='date-block'>
-                      <p class='text'>7:30-8:15</p>
+                  </a>
+
+                  <a href='' class='session-block show-modal'>
+                    <div class='split-content-block col-66-34 text-block'>
+                      <div class='title-block'>
+                        <h3>Registration & Networking Breakfast</h3>
+                        <p class='text'>Shawn Lemerise</p>
+                        <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                      </div>
+                      <div class='date-block'>
+                        <p class='text'>7:30-8:15</p>
+                      </div>
                     </div>
-                  </div>
-                </a>
-              </div>
-              <div class="program-day day-two">
-                <a href='' class='session-block'>
-                  <div class='split-content-block col-66-34'>
-                    <div class='text-block'>
-                      <h3>Registration & Networking Breakfast</h3>
-                      <p class='text'>Shawn Lemerise</p>
-                    </div>
-                    <div class='date-block'>
-                      <p class='text'>7:30-8:15</p>
-                    </div>
-                  </div>
-                </a>
-                <a href='' class='session-block'>
-                  <div class='split-content-block col-66-34'>
-                    <div class='text-block'>
-                      <h3>Registration & Networking Breakfast</h3>
-                      <p class='text'>Shawn Lemerise</p>
-                    </div>
-                    <div class='date-block'>
-                      <p class='text'>7:30-8:15</p>
-                    </div>
-                  </div>
-                </a>
-                <a href='' class='session-block'>
-                  <div class='split-content-block col-66-34'>
-                    <div class='text-block'>
-                      <h3>Registration & Networking Breakfast</h3>
-                      <p class='text'>Shawn Lemerise</p>
-                    </div>
-                    <div class='date-block'>
-                      <p class='text'>7:30-8:15</p>
-                    </div>
-                  </div>
-                </a>
-                <a href='' class='session-block'>
-                  <div class='split-content-block col-66-34'>
-                    <div class='text-block'>
-                      <h3>Registration & Networking Breakfast</h3>
-                      <p class='text'>Shawn Lemerise</p>
-                    </div>
-                    <div class='date-block'>
-                      <p class='text'>7:30-8:15</p>
-                    </div>
-                  </div>
-                </a>
-                <a href='' class='session-block'>
-                  <div class='split-content-block col-66-34'>
-                    <div class='text-block'>
-                      <h3>Registration & Networking Breakfast</h3>
-                      <p class='text'>Shawn Lemerise</p>
-                    </div>
-                    <div class='date-block'>
-                      <p class='text'>7:30-8:15</p>
-                    </div>
-                  </div>
-                </a>
-                <a href='' class='session-block'>
-                  <div class='split-content-block col-66-34'>
-                    <div class='text-block'>
-                      <h3>Registration & Networking Breakfast</h3>
-                      <p class='text'>Shawn Lemerise</p>
-                    </div>
-                    <div class='date-block'>
-                      <p class='text'>7:30-8:15</p>
-                    </div>
-                  </div>
-                </a>
-                <a href='' class='session-block'>
-                  <div class='split-content-block col-66-34'>
-                    <div class='text-block'>
-                      <h3>Registration & Networking Breakfast</h3>
-                      <p class='text'>Shawn Lemerise</p>
-                    </div>
-                    <div class='date-block'>
-                      <p class='text'>7:30-8:15</p>
-                    </div>
-                  </div>
-                </a>
-                <a href='' class='session-block'>
-                  <div class='split-content-block col-66-34'>
-                    <div class='text-block'>
-                      <h3>Registration & Networking Breakfast</h3>
-                      <p class='text'>Shawn Lemerise</p>
-                    </div>
-                    <div class='date-block'>
-                      <p class='text'>7:30-8:15</p>
-                    </div>
-                  </div>
-                </a>
-                <a href='' class='session-block'>
-                  <div class='split-content-block col-66-34'>
-                    <div class='text-block'>
-                      <h3>Registration & Networking Breakfast</h3>
-                      <p class='text'>Shawn Lemerise</p>
-                    </div>
-                    <div class='date-block'>
-                      <p class='text'>7:30-8:15</p>
-                    </div>
-                  </div>
-                </a>
-                <a href='' class='session-block'>
-                  <div class='split-content-block col-66-34'>
-                    <div class='text-block'>
-                      <h3>Registration & Networking Breakfast</h3>
-                      <p class='text'>Shawn Lemerise</p>
-                    </div>
-                    <div class='date-block'>
-                      <p class='text'>7:30-8:15</p>
-                    </div>
-                  </div>
-                </a>
-                <a href='' class='session-block'>
-                  <div class='split-content-block col-66-34'>
-                    <div class='text-block'>
-                      <h3>Registration & Networking Breakfast</h3>
-                      <p class='text'>Shawn Lemerise</p>
-                    </div>
-                    <div class='date-block'>
-                      <p class='text'>7:30-8:15</p>
-                    </div>
-                  </div>
-                </a>
-                <a href='' class='session-block'>
-                  <div class='split-content-block col-66-34'>
-                    <div class='text-block'>
-                      <h3>Registration & Networking Breakfast</h3>
-                      <p class='text'>Shawn Lemerise</p>
-                    </div>
-                    <div class='date-block'>
-                      <p class='text'>7:30-8:15</p>
-                    </div>
-                  </div>
-                </a>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
+
 
           <!--event-info-->
           <div class="content-section event-info">
@@ -783,14 +1051,17 @@
             </div>
             <div class='content-block'>
               <div class='split-content-block col-50-50'>
-                <div class="event-infos-container">
+                <div class="event-infos-container pardot-wrapper" pardot-region="event-info" pardot-region-type="html">
                   <div class="event-info-block">
+
+                    <!--change text (address)-->
                     <div class='text-block'>
                       <h4>Address</h4>
                       <p class='text'>HILTON RESORT & SPA</p>
-                      <a href=''>Get Directions</a>
                     </div>
                   </div>
+
+                  <!--change text (hotel info)-->
                   <div class="event-info-block">
                     <div class='text-block'>
                       <h4>The Hotel</h4>
@@ -800,6 +1071,8 @@
                       <p>We have a discounted overnight parking rate of $20/night. All parking is self-parking and located throughout the Resort. At check-in, guests will receive a parking gate key and a pass to put in their cars.</p>
                     </div>
                   </div>
+
+                  <!--change text (questions? comments?)-->
                   <div class="event-info-block">
                     <div class='text-block'>
                       <h4>Question? Comments?</h4>
@@ -825,6 +1098,8 @@
                       </div>
                     </div>
                   </div>
+
+                  <!--change text (updates)-->
                   <div class="event-info-block">
                     <div class='text-block'>
                       <h4>Get Regular Updates</h4>
@@ -836,10 +1111,10 @@
               </div>
             </div>
           </div>
-
         </div>
 
-  <!--footer-->
+
+        <!--footer-->
         <span class='footer-text'>CipherHealth LLC. 2009 - 2018 All Rights Reserved</span>
       </div>
     </div>
