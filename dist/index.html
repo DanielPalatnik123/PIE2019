@@ -12,9 +12,10 @@
 
     <!-- <link rel=StyleSheet href="https://cipherhealth.com/landing_template/css/styles.min.css" type="text/css" media=screen> -->
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,900|Palanquin" rel="stylesheet">
   </head>
   <body>
+    <h1 style="display:none;">CipherHealth Partners in Excellence 2019</h1>
 
     <div class="page-cover"></div>
 
@@ -33,13 +34,13 @@
 
           <li class='menu-item'><a href="#">Top</a></li>
           <li class='menu-item'><a href="#">2018 Conference</a></li>
-          <li class='menu-item'><a href="#">Partner Award</a></li>
           <li class='menu-item'><a href="#">Keynote</a></li>
+          <li class='menu-item'><a href="#">Partner Award</a></li>
           <li class='menu-item'><a href="#">Speakers</a></li>
           <li class='menu-item'><a href="#">Program</a></li>
           <li class='menu-item'><a href="#">Location</a></li>
           <li class='menu-item'><a href="#" class="italic">#CHPIE2019</a></li>
-          <li class='menu-item'><a href="#" class="social-icon"><img src="https://cipherhealth.com/wp-content/uploads/2018/07/Icon_Linkedin.svg"></a></li>
+          <li class='menu-item'><a href="https://www.linkedin.com/shareArticle?mini=true&url=http://info.cipherhealth.com/l/183332/2018-08-31/2v1vmz&title=LinkedIghjhhn%20Developer%20Network&summary=My%20favorite%20developer%20program&source=LinkedIn" class="social-icon"><img src="https://cipherhealth.com/wp-content/uploads/2018/07/Icon_Linkedin.svg"></a></li>
           <li class='menu-item'><a href="#" class="social-icon"><img src="https://cipherhealth.com/wp-content/uploads/2018/07/Icon_Twitter.svg"></a></li>
           <li class='menu-item'><a href="#" class="social-icon"><img src="https://cipherhealth.com/wp-content/uploads/2018/07/Icon_Rss.svg"></a></li>
         </ul>
@@ -62,6 +63,18 @@
       </div>
     </div>
 
+    <!-- video modal -->
+    <div id="videoModal" class="video-modal animated zoomIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="video-modal-dialog">
+        <div class="video-modal-content">
+          <div class="video-modal-body">
+            <iframe src="https://player.vimeo.com/video/169856202?color=ffffff" width="800" height="450" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
+            <button class="close-thin" data-dismiss="video-modal"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <!--page wrapper-->
 
@@ -70,7 +83,7 @@
       <div class="page-video-container pardot-wrapper" pardot-region="top-video" pardot-region-type="html">
 
         <!--change video-->
-        <video autoplay="" muted="" loop="" src="https://cipherhealth.com/wp-content/uploads/2018/07/PIE2019-page-top-video-1.mp4">
+        <video class="bgvid" autoplay="" muted="" loop="" src="https://cipherhealth.com/wp-content/uploads/2018/07/PIE2019-page-top-video-1.mp4">
           <source src="https://cipherhealth.com/wp-content/uploads/2018/07/PIE2019-page-top-video-1.mp4" type='video/mp4' codecs='avc1.42E01E' />
         </video>
       </div>
@@ -103,7 +116,6 @@
             </div>
           </div>
 
-
           <!--the conference-->
           <div class="content-section the-conference">
             <div class='hex first'>
@@ -120,42 +132,60 @@
                 <!--change video-->
                 <div class="left-column">
                   <div class='whole-content-block'>
+
+                    <a href="" title="Play video" class='play-button-container' data-toggle="modal" data-target="#videoModal">
+                      <span class='play-button-text'>watch the video</span>
+                      <div class="play btn-modal" ></div>
+                    </a>
+
                     <video autoplay="" muted="" loop="" src="https://cipherhealth.com/wp-content/uploads/2018/06/Cipher-Highlight-5.mp4">
                       <source src="https://cipherhealth.com/wp-content/uploads/2018/06/Cipher-Highlight-5.mp4" type='video/mp4' codecs='avc1.42E01E' />
                     </video>
                   </div>
-                  <div class='split-content-block col-66-34'>
+                  <div class='split-content-block col-50-50'>
 
                     <!--change image (Participating companies logos)-->
-                    <div class='logo-block'>
+                    <div class='list-block'>
                       <h4>Participating Companies</h4>
-                      <div class="logos">
-                        <div class="logo">
-                          <img src='https://cipherhealth.com/wp-content/uploads/2018/06/Partners-logo.png'>
-                        </div>
+                      <ul class="logos">
+                        <li>
+                          <h3>Baylor Health</h3>
+                        </li>
 
-                        <div class="logo">
-                          <img src='https://cipherhealth.com/wp-content/uploads/2018/06/Partners-logo.png'>
-                        </div>
+                        <li>
+                          <h3>Henry Ford Health System</h3>
+                        </li>
 
-                        <div class="logo">
-                          <img src='https://cipherhealth.com/wp-content/uploads/2018/06/Partners-logo.png'>
-                        </div>
+                        <li>
+                          <h3>Intermountain Healthcare</h3>
+                        </li>
 
-                        <div class="logo">
-                          <img src='https://cipherhealth.com/wp-content/uploads/2018/06/Partners-logo.png'>
-                        </div>
+                        <li>
+                          <h3>Sentara Healthcare</h3>
+                        </li>
 
-                        <div class="logo">
-                          <img src='https://cipherhealth.com/wp-content/uploads/2018/06/Partners-logo.png'>
-                        </div>
+                        <li>
+                          <h3>UCSF Health</h3>
+                        </li>
 
-                        <div class="logo">
-                          <img src='https://cipherhealth.com/wp-content/uploads/2018/06/Partners-logo.png'>
-                        </div>
+                        <li>
+                          <h3>Well Care Home Health</h3>
+                        </li>
 
-                      </div>
+                        <li>
+                          <h3>Northwell Health</h3>
+                        </li>
+
+                        <li>
+                          <h3>Northshore University Health System</h3>
+                        </li>
+
+                        <li>
+                          <h3>Providence Saint Joseph Health</h3>
+                        </li>
+                      </ul>
                     </div>
+
 
                     <!--change image-->
                     <div class='image-block' style="background-image:url(https://cipherhealth.com/wp-content/uploads/2018/06/the-conference-img1.jpg);background-size: cover;"></div>
@@ -222,45 +252,34 @@
                 <!--change title-->
                 <h1>Keynotes</h1>
               </div>
-              <div class='split-content-block col-33-33-33 pardot-wrapper' pardot-region="keynotes" pardot-region-type="html">
+              <div class='split-content-block col-50-50 pardot-wrapper' pardot-region="keynotes" pardot-region-type="html">
 
                 <!--change image and text (all keynotes below)-->
-                <a href='' class='keynote-block show-modal'>
+                <a href="" class="keynote-block show-modal">
                   <div class="photo-bg"></div>
-                  <div class="image-block" style="background-image:url('https://cipherhealth.com/wp-content/uploads/2018/06/the-conference-speaker1_1.jpg');">
+                  <div class="image-block" style="background-image:url('https://cipherhealth.com/wp-content/uploads/2018/09/keynote_Gierlinger-Sven1.jpg');">
                   </div>
                   <div class="text-block">
                     <div class="arrow-up"></div>
-                    <h2>Driving Excellence with Voice</h2>
-                    <h5 class='highlight'>Driving Excellence with Voice</h5>
-                    <h5>Discharge Coordinator, Emergency Department, UCSF</h5>
-                    <p class='text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <h2>Every Moment Matters: Transformational Approach to Experience</h2>
+                    <h5 class="highlight">Sven Gierlinger</h5>
+                    <h5>Chief Experience Officer, Northwell Health</h5>
+                    <p class="text">In today’s healthcare landscape, providers are seeing the rise in consumerism, where patients and families expect choice and freedom of loyalty in their care. With a rapidly growing focus on consistent, exceptional service in delivering high-quality care, healthcare systems are finding new and innovative strategies for putting service into their organizational practice.</p>
+
+                    <p class="text modal-full">Sven Gierlinger was hired as Northwell Health’s very first Chief Experience Officer. With his background at the Ritz Carlton Hotel Company, he adds a new perspective on how patient care can be translated into customer service. From educating and reigniting team members to their purpose in healthcare, to increasing access and usability of data, Gierlinger and his team continuously seek ways to deliver exceptional care, quality, and experience, including finding ways of taking hospital food from “a liability to an asset”. In this Keynote, Gierlinger will demonstrate how Northwell continues to challenge the status quo and how his team is trailblazing a new reality for the patient/consumer experience.</p>
                   </div>
                 </a>
 
-                <a href='' class='keynote-block show-modal'>
+                <a href="" class="keynote-block show-modal">
                   <div class="photo-bg"></div>
-                  <div class="image-block" style="background-image:url('https://cipherhealth.com/wp-content/uploads/2018/06/the-conference-speaker1_2.jpg');">
+                  <div class="image-block" style="background-image:url('https://cipherhealth.com/wp-content/uploads/2018/09/keynote_Gillespie-Darria1.jpg');">
                   </div>
                   <div class="text-block">
                     <div class="arrow-up"></div>
-                    <h2>Driving Excellence with Voice</h2>
-                    <h5 class='highlight'>Driving Excellence with Voice</h5>
-                    <h5>Discharge Coordinator, Emergency Department, UCSF</h5>
-                    <p class='text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                  </div>
-                </a>
-
-                <a href='' class='keynote-block show-modal'>
-                  <div class="photo-bg"></div>
-                  <div class="image-block" style="background-image:url('https://cipherhealth.com/wp-content/uploads/2018/06/the-conference-speaker1_3.jpg');">
-                  </div>
-                  <div class="text-block">
-                    <div class="arrow-up"></div>
-                    <h2>Driving Excellence with Voice</h2>
-                    <h5 class='highlight'>Driving Excellence with Voice</h5>
-                    <h5>Discharge Coordinator, Emergency Department, UCSF</h5>
-                    <p class='text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <h2>Darria Gillespie, MD</h2>
+                    <h5 class="highlight">Title</h5>
+                    <h5>Whatever</h5>
+                    <p class="text">Things and stuff will go here</p>
                   </div>
                 </a>
               </div>
@@ -277,22 +296,20 @@
 
               <!--change title-->
               <div class='whole-content-block'>
-                <h1>Partner Award</h1>
+                <h1>Partner Awards</h1>
               </div>
               <div class='split-content-block col-34-66 pardot-wrapper' pardot-region="partner award" pardot-region-type="html">
 
                 <!--change image-->
                 <div class='image-block'>
-                  <img src='https://cipherhealth.com/wp-content/uploads/2018/06/the-conference-speaker1_1.jpg'>
-                  <a href='' class='button'><span>Submit Nomination</span></a>
+                  <img src='https://cipherhealth.com/wp-content/uploads/2018/09/Screen-Shot-2018-09-05-at-3.14.21-PM.png'>
                 </div>
 
                 <!--change text-->
                 <div class='text-block'>
                   <h3>A prize for the thought leaders among us</h3>
-                  <p class='text'>The CipherHealth Partner Awards recognize clients who have achieved excellence in outcomes and/or use CipherHealth solutions in innovative ways. This is a unique opportunity to hear from high achieving clients who are innovating with the use of our products, reaching organizational goals, and improving the patient and family experience.</p>
-                  <h4>Submission Deadline</h4>
-                  <h2>August 08</h2>
+                  <p class="text">The CipherHealth Partner Awards recognize clients who have achieved excellence in outcomes and/or use CipherHealth solutions in innovative ways.</p>
+                  <p class='text'>This is a unique opportunity to hear from high achieving clients who are innovating with the use of our products, reaching organizational goals, and improving the patient and family experience.</p>
                 </div>
               </div>
             </div>
@@ -322,7 +339,7 @@
                 </div>
 
                 <!--change text (stats)-->
-                <div class="speakers-block speakers-info-block numbers">
+                <!-- <div class="speakers-block speakers-info-block numbers">
                   <div class='whole-content-block'>
                     <h2>Driving Excellence with Voice is a really excellent thing to do</h2>
                     <div class='split-content-block col-33-33-33'>
@@ -332,45 +349,9 @@
                     </div>
                     <p>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
                   </div>
-                </div>
+                </div> -->
 
                 <!--change text and image (all speakers below)-->
-                <a href='' class='speakers-block show-modal'>
-                  <div class="image-block">
-                    <div class="photo-bg"></div>
-                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
-                  </div>
-                  <div class="text-block">
-                    <h5>Lana Rey</h5>
-                    <p class='text'>Sentara</p>
-                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
-                  </div>
-                </a>
-
-                <a href='' class='speakers-block show-modal'>
-                  <div class="image-block">
-                    <div class="photo-bg"></div>
-                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
-                  </div>
-                  <div class="text-block">
-                    <h5>Lana Rey</h5>
-                    <p class='text'>Sentara</p>
-                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
-                  </div>
-                </a>
-
-                <a href='' class='speakers-block show-modal'>
-                  <div class="image-block">
-                    <div class="photo-bg"></div>
-                    <img src="https://cipherhealth.com/wp-content/uploads/2018/07/speaker-photo-example.jpg">
-                  </div>
-                  <div class="text-block">
-                    <h5>Lana Rey</h5>
-                    <p class='text'>Sentara</p>
-                    <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
-                  </div>
-                </a>
-
                 <a href='' class='speakers-block show-modal'>
                   <div class="image-block">
                     <div class="photo-bg"></div>
@@ -720,10 +701,10 @@
               </div>
 
               <!--change image and text (all sessions listed below)-->
-              <div class="program-container pardot-wrapper" pardot-region="program" pardot-region-type="html">
+              <div class="program-container pardot-wrapper expand-one" pardot-region="program" pardot-region-type="html">
 
                 <!--day one-->
-                <div class="program-day day-one expanded">
+                <div class="program-day day-one">
                   <a href='' class='session-block show-modal'>
                     <div class='split-content-block col-66-34 text-block'>
                       <div class='title-block'>
@@ -736,6 +717,32 @@
                       </div>
                     </div>
                   </a>
+
+                  <div class='session-block'>
+                    <div class='title-block split-content-block dual-track-block'>
+                      <div class='split-content-block col-50-50'>
+                        <a href='' class="left-column show-modal">
+                          <div class='text-block'>
+                            <span class='track-title'>track 1</span>
+                            <h3>Registration & Networking Breakfast</h3>
+                            <p class='text'>Shawn Lemerise</p>
+                            <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                          </div>
+                        </a>
+                        <a href='' class="right-column show-modal">
+                          <div class='text-block'>
+                            <span class='track-title'>track 2</span>
+                            <h3>Registration & Networking Breakfast</h3>
+                            <p class='text'>Shawn Lemerise</p>
+                            <p class='text modal-full'>Digital rounding empowers your team to identify and resolve patient needs quickly at the point of care with real-time insights. </p>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                    <div class='date-block'>
+                      <p class='text'>7:30-8:15</p>
+                    </div>
+                  </div>
 
                   <a href='' class='session-block show-modal'>
                     <div class='split-content-block col-66-34 text-block'>
@@ -789,7 +796,7 @@
                     </div>
                   </a>
 
-                  <a href='' class='session-block show-modal'>
+                  <a href='' class='session-block show-modal session-keynote' style="background-image: url('https://cipherhealth.com/wp-content/uploads/2018/06/the-conference-img3.jpg');">
                     <div class='split-content-block col-66-34 text-block'>
                       <div class='title-block'>
                         <h3>Registration & Networking Breakfast</h3>
@@ -974,7 +981,7 @@
                     </div>
                   </a>
 
-                  <a href='' class='session-block show-modal'>
+                  <a href='' class='session-block show-modal session-keynote' style="background-image: url('https://cipherhealth.com/wp-content/uploads/2018/06/the-conference-img2.jpg');">
                     <div class='split-content-block col-66-34 text-block'>
                       <div class='title-block'>
                         <h3>Registration & Networking Breakfast</h3>
@@ -1079,7 +1086,7 @@
                       <div class='split-content-block col-50-50'>
                         <div class='text-block'>
                           <span>Email</span>
-                          <a href=''>info@cipherhealh.com</a>
+                          <a class="info-link" href=''>info@cipherhealh.com</a>
                         </div>
                         <div class='text-block'>
                           <span>Phone</span>
@@ -1089,11 +1096,11 @@
                       <div class='split-content-block col-50-50'>
                         <div class='text-block'>
                           <span>Event Content</span>
-                          <a href=''>bdavis@cipherhealth.com</a>
+                          <a class="info-link" href=''>bdavis@cipherhealth.com</a>
                         </div>
                         <div class='text-block'>
                           <span>Event Logistics</span>
-                          <a href=''>mjmoody@cipherhealth.com</a>
+                          <a class="info-link" href=''>mjmoody@cipherhealth.com</a>
                         </div>
                       </div>
                     </div>

@@ -25,28 +25,29 @@
   })
 })();
 
-(function detectGrid() {
-  var topContainer = document.getElementById("page-top-inner");
-  var outerContainer = document.getElementById("outer");
-  var containerStyle = window.getComputedStyle(topContainer);
-  var vals = Object.keys(containerStyle).map(function(key) {
-      return containerStyle[key];
-  });
-  var hasGrid = false;
+// (function detectGrid() {
+//   var topContainer = document.getElementById("page-top-inner");
+//   var outerContainer = document.getElementById("outer");
+//   var containerStyle = window.getComputedStyle(topContainer);
+//   var vals = Object.keys(containerStyle).map(function(key) {
+//       return containerStyle[key];
+//   });
+//   var hasGrid = false;
+//
+//   $(containerStyle).map(function(index,element) {
+//     var tryGrid = new RegExp("grid-");
+//     var tryGridIE = new RegExp("msGrid");
+//
+//     if (tryGrid.test(element) || tryGridIE.test(element)) {
+//       hasGrid = true;
+//     }
+//   })
+//
+//   if (hasGrid === false) {
+//     outerContainer.className += " noGrid";
+//   }
+// })();
 
-  $(containerStyle).map(function(index,element) {
-    var tryGrid = new RegExp("grid-");
-    var tryGridIE = new RegExp("msGrid");
-
-    if (tryGrid.test(element) || tryGridIE.test(element)) {
-      hasGrid = true;
-    }
-  })
-
-  if (hasGrid === false) {
-    outerContainer.className += " noGrid";
-  }
-})();
 
 
 (function topDate() {
@@ -85,29 +86,34 @@ function shrinkMenu() {
 $('.menu-item').mouseenter(expandMenu);
 $('.menu-item').mouseleave(shrinkMenu);
 
-
 function menuScroll() {
   var allSections = $('.content-section')
   var allAnchors = $('.menu-item')
   var thisAnchor = this
   var ind = ''
-  var elTop = ''
+  var elementTop = ''
+
+  /*compares clicked menu item with the entire array of menu items, gets its position*/
   allAnchors.map(function(index,element) {
     if (thisAnchor == element) {
       ind = index
     }
   })
 
+  /*compares array number decided above with the same array of sections (which positioning is the same as the menu items) and picks the equivalent section*/
   allSections.map(function(index,element) {
-    if (index == ind && index != 0) {
-      elTop = element
+
+    /*a modal content section on top of the top section will require the first menu item index to be skipped*/
+    var indexPastModal = index-1;
+    if (indexPastModal == ind && index != 0) {
+      elementTop = element
     } else if (ind == 0) {
-      elTop = $('.page-wrapper')[0]
+      elementTop = $('.page-wrapper')[0]
     }
   })
 
   $('html, body').animate({
-      scrollTop: $(elTop).offset().top
+      scrollTop: $(elementTop).offset().top
   }, 1000);
 
   if ((ind != 7) && (ind != 8) && (ind != 9) && (ind != 10)) {
@@ -116,51 +122,6 @@ function menuScroll() {
 }
 
 $('.menu-item').on('click', menuScroll);
-
-
-
-
-
-
-
-$('video').on('loadedmetadata', function() {
-  $('video')[0].play();
-});
-
-
-// //functions related to video on product child pages
-// var modalIframe = $('.modal iframe')
-// var vidsrc = modalIframe.attr('src');
-// var icon = $('.play');
-//
-// icon.click(function() {
-//    icon.toggleClass('active');
-// });
-//
-// $('.btn-modal').click(function(ev) {
-//   modalIframe.attr('src', vidsrc);
-//   console.log(modalIframe)
-//   // modalIframe[0].src += "&autoplay=1";
-//   var windowHeight = $(window).height()
-//
-//   modalIframe.css("height","100%");
-//   ev.preventDefault();
-// });
-//
-// $('.close-thin').click(function() {
-//   modalIframe.attr('src','');
-// });
-//
-//
-// function modalResize() {
-//   var windowHeight = $(window).height()
-//   modalIframe.height(windowHeight);
-// }
-// $(window).on('resize',modalResize);
-//
-
-
-
 
 
 
@@ -173,12 +134,12 @@ $('video').on('loadedmetadata', function() {
 
 function peopleSayingHeight() {
   var leftColumnVideoHeight = $(".the-conference .left-column video")[0].clientHeight;
-  var leftColumnLogosHeight = $(".the-conference .left-column .logo-block")[0].clientHeight;
+  var leftColumnLogosHeight = $(".the-conference .left-column .list-block")[0].clientHeight;
   var leftColumnImageHeight = $(".the-conference .left-column .whole-content-block .image-block")[0].clientHeight;
 
   var textHeight = $(".the-conference .right-column .text-block")[0].clientHeight;
   var imgHeight = $(".the-conference .right-column .image-block")[0].clientHeight;
-  var list = $(".the-conference .list-block");
+  var list = $(".the-conference .right-column .list-block");
   var listHeight = list[0].clientHeight;
 
   var containerHeight = '';
@@ -192,14 +153,12 @@ $(window).on('resize', peopleSayingHeight);
 
 
 
-
-
 function SpeakersMobileCollapse() {
 
   var titleOffset = $('.speakers-container h1')[0].offsetTop
-  var collapsedOffset = $('.speakers-container')[0].children[18].offsetTop
+  var collapsedOffset = $('.speakers-container')[0].children[10].offsetTop
   var uncollapsedOffset = $('.speakers-container').children().last()[0].offsetTop
-  var finalCollapsedHeight = uncollapsedOffset - collapsedOffset + 100
+  var finalCollapsedHeight = uncollapsedOffset - collapsedOffset + 120
   var finalUncollapsedHeight = uncollapsedOffset - titleOffset + 250
 
   if ($(window).width() <= 520){
@@ -215,7 +174,7 @@ function SpeakersMobileCollapse() {
 
 function SpeakersExpandHeight() {
   var titleOffset = $('.speakers-container h1')[0].offsetTop
-  var collapsedOffset = $('.speakers-container')[0].children[18].offsetTop
+  var collapsedOffset = $('.speakers-container')[0].children[10].offsetTop
   var uncollapsedOffset = $('.speakers-container').children().last()[0].offsetTop
   var finalCollapsedHeight = uncollapsedOffset - collapsedOffset + 100
   var finalUncollapsedHeight = uncollapsedOffset - titleOffset + 250
@@ -260,18 +219,18 @@ $(window).on('resize', navColorChange);
 
 
 function changeDay() {
-  $('.program-day').removeClass('expanded')
+  $('.program-container').removeClass('expand-one')
+  $('.program-container').removeClass('expand-two')
   $('.day').removeClass('selected-day')
 
   if (this == $('.day')[0]) {
     $(this).addClass('selected-day')
-    $('.day-one').addClass('expanded')
-    $('.program-container').css('transform', 'translateX(0)')
+    $('.program-container').addClass('expand-one')
 
   } else if (this == $('.day')[1]) {
     $(this).addClass('selected-day')
-    $('.day-two').addClass('expanded')
-    $('.program-container').css('transform', 'translateX(-100%)')
+    $('.program-container').addClass('expand-two')
+
   }
 }
 
@@ -312,15 +271,45 @@ $('.day').on('click', changeDay);
 
 
 
-function showPage() {
-  $('.page-cover').hide()
+/*funtion related to video modal */
+
+$('video').on('loadedmetadata', function() {
+  $('video')[0].play();
+});
+
+var modalContainer = $('.video-modal')
+var modalIframe = $('.video-modal iframe')
+var vidsrc = modalIframe.attr('src');
+var icon = $('.play');
+
+icon.click(function() {
+   icon.toggleClass('active');
+});
+
+
+$('.btn-modal').click(function(ev) {
+  modalContainer.addClass('expanded');
+  modalIframe.attr('src', vidsrc);
+  modalIframe[0].src += "&autoplay=1";
+  var windowHeight = $(window).height()
+  ev.preventDefault();
+});
+
+
+function closeModal() {
+  modalContainer.removeClass('expanded');
+  modalIframe.attr('src','');
 }
+$('.close-thin').click(closeModal);
+$('#videoModal').click(closeModal);
 
-setTimeout(showPage, 0);
 
+/*funtion related to non-video modal */
 
 function toggleModal(event) {
   if ($(this).hasClass('show-modal')) {
+    $('#myModal').attr( "class", "modal" );
+
     $('#myModal .right-column .text-block').remove();
     $('#myModal .left-column .image-block').remove();
 
@@ -328,19 +317,12 @@ function toggleModal(event) {
     var thisImage = $(this).find('.image-block')[0]
     var thisClass = ''
 
-    if ($(this).hasClass('keynote-block')) {
-      thisClass = $(this)[0].className
-    }
-
-    else if ($(this).hasClass('speakers-block')) {
-      thisClass = $(this)[0].className
-    }
-
-    else if ($(this).hasClass('session-block')) {
-      thisClass = $(this)[0].className
+    if ($(this).hasClass('keynote-block') || $(this).hasClass('speakers-block') || $(this).hasClass('session-block') || $(this).parent().parent().hasClass('dual-track-block')) {
+      thisClass = $(this)[0].className;
     }
 
     thisClass = thisClass.split(" ")[0]
+
     thisClassCss = '.' + thisClass
 
     $(thisClassCss).map(function(index, element){
@@ -351,11 +333,13 @@ function toggleModal(event) {
       if (thisText == everyText) {
         $(everyText).clone().appendTo("#myModal .right-column");
         $("#myModal .right-column .text-block").addClass(thisClass);
+        $("#myModal").addClass(thisClass);
       }
 
       if (thisImage == everyImage) {
         $(everyImage).clone().appendTo("#myModal .left-column");
         $("#myModal .left-column .image-block").addClass(thisClass);
+        $("#myModal").addClass(thisClass);
       }
     })
 
@@ -375,3 +359,13 @@ function toggleModal(event) {
 $('#myModal').on('click', toggleModal);
 $('.show-modal').on('click', toggleModal);
 $('.close').on('click', toggleModal);
+
+
+
+/*funtion to display page */
+
+function showPage() {
+  $('.page-cover').hide()
+}
+
+setTimeout(showPage, 0);
