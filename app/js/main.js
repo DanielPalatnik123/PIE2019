@@ -25,53 +25,6 @@
   })
 })();
 
-// (function detectGrid() {
-//   var topContainer = document.getElementById("page-top-inner");
-//   var outerContainer = document.getElementById("outer");
-//   var containerStyle = window.getComputedStyle(topContainer);
-//   var vals = Object.keys(containerStyle).map(function(key) {
-//       return containerStyle[key];
-//   });
-//   var hasGrid = false;
-//
-//   $(containerStyle).map(function(index,element) {
-//     var tryGrid = new RegExp("grid-");
-//     var tryGridIE = new RegExp("msGrid");
-//
-//     if (tryGrid.test(element) || tryGridIE.test(element)) {
-//       hasGrid = true;
-//     }
-//   })
-//
-//   if (hasGrid === false) {
-//     outerContainer.className += " noGrid";
-//   }
-// })();
-
-
-
-(function topDate() {
-
-  var today = new Date();
-  var BigDay = new Date("June 19, 2019");
-  var msPerDay = 24 * 60 * 60 * 1000;
-  var timeLeft = (BigDay.getTime() - today.getTime());
-  var e_daysLeft = timeLeft / msPerDay;
-  var daysLeft = Math.floor(e_daysLeft);
-  var yearsLeft = 0;
-  if (daysLeft > 365) {
-    yearsLeft = Math.floor(daysLeft / 365);
-    daysLeft = daysLeft % 365;
-  }
-
-  $('.counter-number').text(daysLeft);
-
-  // var daysInMonthsLeft = Math.round((monthsLeftFloat - monthsLeftInt)*30)
-  // var monthsLeftInt = parseInt(daysLeft/30)
-  // var monthsLeftFloat = parseFloat(daysLeft/30)
-
-})()
-
 
 function expandMenu() {
   $('.menu-item').removeClass('expanded-menu')
@@ -223,16 +176,24 @@ function changeDay() {
   $('.program-container').removeClass('expand-two')
   $('.day').removeClass('selected-day')
 
-  if (this == $('.day')[0]) {
-    $(this).addClass('selected-day')
+  // $('.day').map(function(index, element){
+  //   $(element).removeClass('selected-day')
+  // })
+  thisClass = $(this).attr('class')
+
+  if (thisClass.indexOf('first') !== -1) {
+    $('.first-day').map(function(index, element){
+      $(element).addClass('selected-day')
+    })
     $('.program-container').addClass('expand-one')
-
-  } else if (this == $('.day')[1]) {
-    $(this).addClass('selected-day')
-    $('.program-container').addClass('expand-two')
-
+  } else if (thisClass.indexOf('second') !== -1) {
+      $('.second-day').map(function(index, element){
+        $(element).addClass('selected-day')
+      })
+      $('.program-container').addClass('expand-two')
   }
 }
+
 
 $('.day').on('click', changeDay);
 
@@ -360,6 +321,50 @@ $('#myModal').on('click', toggleModal);
 $('.show-modal').on('click', toggleModal);
 $('.close').on('click', toggleModal);
 
+
+(function topDate() {
+
+  var today = new Date();
+  var BigDay = new Date("June 19, 2019");
+  var msPerDay = 24 * 60 * 60 * 1000;
+  var timeLeft = (BigDay.getTime() - today.getTime());
+  var e_daysLeft = timeLeft / msPerDay;
+  var daysLeft = Math.floor(e_daysLeft);
+  var yearsLeft = 0;
+  if (daysLeft > 365) {
+    yearsLeft = Math.floor(daysLeft / 365);
+    daysLeft = daysLeft % 365;
+  }
+
+  function commaSeparateNumber(val){
+     while (/(\d+)(\d{3})/.test(val.toString())){
+       val = val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+     }
+     return val;
+   }
+
+
+  function startCounter(){
+
+    $(".counter-container").each(function (index, element) {
+      var thisText = $(this).find(".large-text-text");
+      var thisValue = $(this).find(".large-text-value");
+      thisValue.html(daysLeft)
+	    $(thisValue).prop('Counter',0).animate({
+	        Counter: $(thisValue).text()
+	    }, {
+	        duration: 2000,
+	        easing: 'swing',
+	        step: function (now) {
+              thisText.text(commaSeparateNumber(parseInt(now).toFixed(0)));
+	        }
+	    });
+    })
+  }
+
+
+  startCounter();
+})()
 
 
 /*funtion to display page */

@@ -6,6 +6,7 @@ body {
 
 }
 
+
 h1,
 h2,
 h3 {
@@ -28,16 +29,6 @@ h1 {
   padding-top: 40px;
   letter-spacing: 1px;
 
-  // @media all and (min-width: 520px) {
-  //   font-size: 7vw;
-  //   letter-spacing: .2vw;
-  // }
-  //
-  // @media all and (min-width: 991px) {
-  //   font-size: 9vw;
-  //   letter-spacing: 2px;
-  // }
-
   @media all and (min-width: 1200px) {
     font-size: 8vw;
   }
@@ -53,12 +44,12 @@ h2 {
 }
 
 h3 {
-  font-weight: 400;
-  font-size: 14px;
+  font-weight: 700;
+  font-size: 20px;
   padding: 0 0 25px;
 
   @media all and (min-width: 520px) {
-    font-size: 24px;
+    font-size: 26px;
   }
 }
 
@@ -72,23 +63,23 @@ h4 {
 }
 
 h5 {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.8px;
 
   @media all and (min-width: 520px) {
-    font-size: 14px;
+    font-size: 18px;
   }
 }
 
 p {
   margin: 0;
-  font-size: 12px;
-  line-height: 18px;
+  font-size: 14px;
+  line-height: 20px;
 
   @media all and (min-width: 768px) {
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 16px;
+    line-height: 22px;
   }
 }
 
@@ -98,7 +89,7 @@ span,
 h3,
 h4,
 h5 {
-  color: rgba(0,0,0,0.6);
+  color: rgba(0,0,0,0.7);
 }
 
 a,
@@ -164,25 +155,8 @@ h4,
   position: relative;
 }
 
-.page-container .highlight {
-  font-size: 24px;
-  font-weight: 400;
-  line-height: 30px;
-
-  @media all and (min-width: 520px) {
-    font-size: 32px;
-    line-height: 38px;
-  }
-
-  @media all and (min-width: 768px) {
-    font-size: 24px;
-    line-height: 30px;
-  }
-
-  @media all and (min-width: 991px) {
-    font-size: 32px;
-    line-height: 38px;
-  }
+.highlight {
+  font-weight: 900;
 }
 
 /*css specific to containers*/
@@ -231,7 +205,6 @@ h4,
 
 .content-section {
   max-width: 100vw;
-  margin: 0 0 8vw;
 
   @media all and (min-width: 991px) {
     max-width: 69vw;
@@ -484,15 +457,6 @@ h4,
   text-decoration: none;
   text-align: center;
   max-width: 250px;
-  font-size: 16px;
-
-  @media all and (min-width: 520px) {
-    font-size: 12px;
-  }
-
-  @media all and (min-width: 768px) {
-    font-size: 16px;
-  }
 
   &:hover {
     transition: all .5s linear;
@@ -500,6 +464,19 @@ h4,
 
   span {
     text-transform: uppercase;
+  }
+}
+
+h5.name {
+  font-weight: 900;
+}
+
+span.position {
+  font-size: 12px;
+  font-weight: 700;
+
+  @media all and (min-width: 520px) {
+    font-size: 14px;
   }
 }
 
@@ -537,7 +514,7 @@ h4,
 .track-title {
   text-transform: uppercase;
   margin-bottom: 10px;
-  font-size: 10px;
+  // font-size: 10px;
   font-weight: 700;
   display: block;
 }
@@ -552,7 +529,6 @@ h4,
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 99; /* Sit on top */
-  padding-top: 50px; /* Location of the box */
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -572,6 +548,9 @@ h4,
   min-height: 60%;
   overflow: scroll;
   max-height: 60vh;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 
   @media all and (min-width: 520px) {
     max-height: 75%;
@@ -579,7 +558,7 @@ h4,
     padding: 40px;
   }
 
-  h2, h5 {
+  h2 {
     padding-bottom:20px;
   }
 
@@ -588,11 +567,30 @@ h4,
   }
 
   h2 {
-    color: rgba(0,0,0,0.6);
+    color: rgba(0,0,0,0.7);
   }
 
-  .highlight {
-    padding: 0;
+  h3 {
+    padding: 0 0 0;
+  }
+
+  h5.name {
+    font-weight: 900;
+    font-size: 24px;
+
+    @media all and (min-width: 520px) {
+      font-size: 28px;
+    }
+  }
+
+  span.position {
+    padding-bottom: 15px;
+    color: rgba(0,0,0,0.3);
+    font-size: 18px;
+  }
+
+  .content-block {
+    padding-bottom: 40px;
   }
 
   .left-column {
@@ -671,33 +669,11 @@ h4,
 
     .image-block {
       min-height: auto;
-      padding-bottom: 15px;
     }
 
-    .text-block {
-      h5 {
-        font-weight: 900;
-        font-size: 24px;
-
-        @media all and (min-width: 520px) {
-          font-size: 28px;
-        }
-      }
-
-      p {
-        font-size: 21px;
-        line-height: initial;
-        color: rgba(0,0,0,0.3);
-
-        &.modal-full {
-          font-size: 16px;
-          color: rgba(0,0,0,0.7)
-        }
-      }
-
-      h5, p {
-        text-align: center;
-      }
+    h5, span, p, .image-block {
+      display: block;
+      text-align: center;
     }
   }
 }
@@ -713,26 +689,44 @@ h4,
   }
 }
 
+
+.modal.keynote-block {
+  h5.name {
+    font-size: 16px;
+
+    @media all and (min-width: 520px) {
+      font-size: 18px;
+    }
+  }
+
+  span.position {
+    font-size: 14px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    display: block;
+  }
+}
+
 .modal.session-block,
 .modal.right-column,
 .modal.left-column {
+  display: block;
 
   .modal-content {
+    height: auto;
+    max-height: none;
+    min-height: auto;
+
     .split-content-block {
-      grid-template-columns: 0 100%;
-      -ms-grid-columns: 100% 100%;
-      grid-template-rows: auto;
-      -ms-grid-rows: auto;
-    }
+      display: block;
 
-    .left-column {
-      -ms-grid-row: 1;
-      -ms-grid-column: 1;
-    }
+      &.col-50-50 {
+        height: auto;
+      }
 
-    .right-column {
-      -ms-grid-row: 2;
-      -ms-grid-column: 1;
+      &.col-66-34 {
+        height: auto;
+      }
     }
 
     .date-block {
@@ -740,18 +734,18 @@ h4,
 
       p {
         color: rgba(0,0,0,0.7);
-        font-size: 12px;
-        line-height: 18px;
+        font-size: 18px;
+        line-height: 24px;
 
         @media all and (min-width: 768px) {
-          font-size: 14px;
-          line-height: 20px;
+          font-size: 20px;
+          line-height: 26px;
         }
       }
     }
 
     .track-title {
-      margin: 30px 0 10px;
+      margin: 0 0 10px;
     }
 
     h3 {
@@ -768,14 +762,20 @@ h4,
     }
 
     p {
-      font-size: 21px;
-      line-height: initial;
+      // padding-bottom: 15px;
       color: rgba(0,0,0,0.3);
+      font-size: 18px;
+      font-size: 700;
 
       &.modal-full {
         font-size: 16px;
         color: rgba(0,0,0,0.7)
       }
+    }
+
+    .title-block,
+    .date-block {
+      position: relative;
     }
   }
 }
@@ -876,7 +876,7 @@ h4,
   .play-button-text {
     margin: 16px 14px 0 20px;
     float: left;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -999,6 +999,10 @@ nav {
         opacity: 1;
         transform: rotate(45deg) translate(-2px, -1px);
         background: #ffffff;
+
+        @media all and (min-width: 991px) {
+          opacity: 0;
+        }
       }
 
       /* Ohyeah and the last one should go the other direction*/
@@ -1095,18 +1099,12 @@ nav {
 
       a {
         color: #ffffff;
-        font-size: 14px;
         text-transform: uppercase;
         font-weight: 500;
         text-decoration:none;
         transition: font-size 0.5s;
         white-space: nowrap;
         transition: all 0.5s;
-
-
-        @media all and (min-width: 768px) and (max-width: 990px) {
-          font-size: 12px;
-        }
 
         &:hover {
           font-size: 18px;
@@ -1127,8 +1125,8 @@ nav {
         }
 
         svg {
-          max-width: 30px;
-          height: 30px;
+          max-width: 25px;
+          height: 25px;
         }
       }
     }
@@ -1136,12 +1134,12 @@ nav {
     &.dark-menu {
       @media all and (min-width: 991px) {
         li a {
-          color: rgba(0,0,0,0.6);
+          color: rgba(0,0,0,0.7);
           transition: all 0.5s;
         }
 
         path {
-          fill: rgba(0,0,0,0.6);
+          fill: rgba(0,0,0,0.7);
           transition: all 0.5s;
         }
 
@@ -1359,7 +1357,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
     }
 
     .counter-days {
-      font-size: 12px;
+      font-size: 14px;
       margin-bottom: 54px;
       justify-self:start;
       // -ms-grid-column-align: start;
@@ -1380,7 +1378,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
 
 .the-conference {
   h4, h5, span, p {
-    color: rgba(0,0,0,0.6)
+    color: rgba(0,0,0,0.7)
   }
 
   h1{
@@ -1388,7 +1386,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
   }
 
   h4 {
-    font-size: 14px;
+    font-size: 16px;
     font-weight:900;
     letter-spacing: .5px;
     padding: 17.5px 17px 15.5px;
@@ -1414,6 +1412,30 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
   .whole-content-block,
   .split-content-block {
     margin-top: 17.5px;
+  }
+
+  //patch for always display scrollbar on mac
+  .right-column .list-block::-webkit-scrollbar {
+      -webkit-appearance: none;
+  }
+
+  .right-column .list-block::-webkit-scrollbar:vertical {
+      width: 11px;
+  }
+
+  .right-column .list-block::-webkit-scrollbar:horizontal {
+      height: 11px;
+  }
+
+  .right-column .list-block::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      border: 2px solid white; /* should match background, can't be transparent */
+      background-color: rgba(0, 0, 0, .5);
+  }
+
+  .right-column .list-block::-webkit-scrollbar-track {
+      background-color: #fff;
+      border-radius: 8px;
   }
 
   .list-block,
@@ -1449,15 +1471,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
     li {
       list-style: none;
     }
-
-    h5 {
-      font-weight: 900;
-    }
-
-    span {
-      font-size: 12px;
-      font-weight: 700;
-    }
   }
 
   .left-column {
@@ -1490,9 +1503,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
         padding: 10px 17.5px;
       }
 
-      h3 {
-        font-size: 14px;
+      p {
         font-weight: 700;
+        line-height: normal;
         padding: 0;
       }
     }
@@ -1520,19 +1533,39 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
     .text-block {
       overflow-y: scroll;
       overflow-x: hidden;
+      height: auto;
 
-      @media all and (min-width: 520px) {
-        max-height: 200px;
-      }
-
-      @media all and (min-width: 991px){
-        max-height: 250px;
+      p:first-letter {
+        font-size: 3em;
+        font-weight: 700;
       }
     }
   }
 }
 
 .keynotes {
+  h2 {
+    padding: 30px 30px 18px;
+  }
+
+  h5 {
+    padding: 0 30px;
+  }
+
+  p {
+    padding: 18px 30px 30px;
+  }
+
+  span {
+    padding: 5px 30px 0;
+    display: block;
+  }
+
+  p,
+  span {
+    color: rgba(0,0,0,0.7);
+  }
+
   .split-content-block {
     grid-column-gap: 17.5px;
     -ms-grid-column-gap: 17.5px;
@@ -1612,50 +1645,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
         display: none;
       }
     }
-
-    .highlight {
-      font-size: 12px;
-      font-weight: 400;
-      padding-bottom: 9px;
-      line-height: initial;
-
-      @media all and (min-width: 520px) and (max-width: 767px) {
-        font-size: 14px;
-      }
-
-      @media all and (min-width: 768px) and (max-width: 990px) {
-        font-size: 16px;
-      }
-
-      @media all and (min-width: 991px) {
-        font-size: 18px;
-      }
-    }
-  }
-
-  p,
-  h5,
-  span {
-    color: rgba(0,0,0,0.6);
-  }
-
-  h2 {
-    padding: 30px 30px 9px;
-  }
-
-  p {
-    padding: 18px 30px 30px;
-  }
-
-  h5,
-  span {
-    padding: 0 30px;
   }
 }
 
 .partner-award {
   @media all and (min-width: 768px) {
-    margin-bottom: 16vw;
+    margin-bottom: 8vw;
   }
 
   h1 {
@@ -1663,14 +1658,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
   }
 
   h2 {
-    color: rgba(0,0,0,0.6);
+    color: rgba(0,0,0,0.7);
     font-size: 36px;
     padding-top: 6px;
   }
 
   h3 {
-    font-size: 30px;
-    font-weight: 900;
     padding-top: 35px;
 
     @media all and (min-width: 768px) {
@@ -1732,7 +1725,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
 
 
 .speakers {
-  // margin-top: 70px;
   overflow: hidden;
   transition: all 1s;
 
@@ -1746,29 +1738,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
     }
   }
 
-  h5, p {
-    transition: all .5s linear;
-  }
-
   h5 {
-    font-size: 12px;
-    font-weight: 700;
-    color: #2C585C;
     padding-top: 5px;
-
-    @media all and (min-width: 520px) {
-      font-size: 14px;
-    }
+    font-size: 14px;
   }
 
   p {
-    font-weight: 400;
-    line-height: 14px;
+    font-size: 12px;
+    line-height: initial;
+  }
 
-    @media all and (min-width: 520px) {
-      font-size: 12px;
-      line-height: 16px;
-    }
+  h5, p {
+    transition: all .5s linear;
   }
 
   .speakers-block {
@@ -1924,14 +1905,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
         }
       }
 
-      p {
-        font-size: 12px;
-
-        @media all and (min-width: 520px) {
-          font-size: 14px;
-        }
-      }
-
       .whole-content-block {
         width: 66vw;
         height: 82vw;
@@ -1969,6 +1942,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
 
         .quote-text {
           h2 {
+            font-weight: 300;
             font-size: 5vw;
 
             @media all and (min-width: 768px) {
@@ -2279,19 +2253,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
   .days-selector {
     position: relative;
     height: 40px;
-    width: 200px;
+    width: 300px;
     border: none;
     border-radius: 30px;
     margin-bottom: 6vw;
-    background: #c7eceb;
+    background: rgba(255,255,255, 0.3);
     cursor: pointer;
     overflow: hidden;
+    z-index: 9;
 
     .day {
       float: left;
       padding: 10px 5px;
       height: 100%;
-      width: 45%;
+      width: 46.6%;
       text-align: center;
       transition: all .5s linear;
       color: rgba(0,0,0,0.7);
@@ -2344,7 +2319,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
 
       .title-block.dual-track-block .show-modal {
         h3, p {
-          color: rgba(0,0,0,0.6);
+          color: rgba(0,0,0,0.7);
         }
       }
     }
@@ -2443,10 +2418,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
         display: -ms-grid;
         margin: 0;
       }
-
-      h3 {
-        font-size: 16px;
-      }
     }
 
     @media all and (min-width: 768px) {
@@ -2529,12 +2500,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
       }
 
       .info-link, p {
-        font-size: 12px;
         padding-top: 5px;
 
-        @media all and (min-width: 520px) {
-          font-size: 14px;
-        }
+
       }
       a {
         color: #2C585C;
@@ -2634,7 +2602,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
    }
 
    @media all and (min-width: 768px) {
-     margin: 25vw 0 0 -12.5vw;
+     margin: 19vw 0 0 -12.5vw;
    }
  }
 
