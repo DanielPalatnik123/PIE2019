@@ -1,10 +1,19 @@
+html {
+    background-color: #ffffff;
+}
+
 body {
   font-family: 'lato', sans-serif;
   display: grid;
   display: -ms-grid;
   margin: 0;
-
-}
+  opacity: 1;
+  transition: 2s opacity;
+  &.fade-out {
+      opacity: 0;
+      transition: none;
+    }
+  }
 
 
 h1,
@@ -157,6 +166,12 @@ h4,
 
 .highlight {
   font-weight: 900;
+}
+
+.detail {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 700;
 }
 
 /*css specific to containers*/
@@ -464,6 +479,27 @@ h4,
 
   span {
     text-transform: uppercase;
+  }
+
+  &.submit {
+    background-color: #FFD46A;
+    background-image: url('https://cipherhealth.com/wp-content/uploads/2018/06/ticket.svg');
+    background-repeat: no-repeat;
+    background-position: -33px center;
+    background-size: 70% 70%;
+    max-width: 130px;
+    margin-bottom: 15px;
+
+    &:hover {
+      background-color: #F2C14B;
+    }
+
+    span {
+      padding-left: 25px;
+      font-weight: 400;
+      font-size: 14px;
+      color: #2C585C;
+    }
   }
 }
 
@@ -1153,26 +1189,6 @@ nav {
         }
       }
     }
-
-    #submit {
-      background-color: #FFD46A;
-      background-image: url('https://cipherhealth.com/wp-content/uploads/2018/06/ticket.svg');
-      background-repeat: no-repeat;
-      background-position: -33px center;
-      background-size: 70% 70%;
-      max-width: 130px;
-      margin-bottom: 15px;
-
-      &:hover {
-        background-color: #F2C14B;
-      }
-
-      span {
-        padding-left: 25px;
-        font-size: 14px;
-        color: #2C585C;
-      }
-    }
   }
 }
 
@@ -1480,38 +1496,54 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
       -ms-grid-column:1;
     }
 
-    .col-66-34 {
+    .col-50-50 {
       &.split-content-block {
         @media all and (min-width: 520px) and (max-width: 768px) {
           grid-template-rows: 100%;
           -ms-grid-rows: 50% 50%;
-          grid-template-columns: 100% 0;
-          -ms-grid-columns: 100% 0;
+          grid-template-columns: 100%;
+          -ms-grid-columns: 100%;
+        }
+
+        .list-block {
+          position: relative;
+          -ms-grid-column: 1;
+
+          @media all and (min-width: 768px) {
+            margin-right: 17.5px;
+          }
+
+          ul li {
+            padding: 10px 17.5px;
+          }
+
+          p {
+            font-weight: 700;
+            line-height: normal;
+            padding: 0;
+          }
+        }
+
+        .image-block {
+          height: 88%;
+          display: none;
+
+          @media all and (min-width: 768px) {
+            display: block;
+          }
+        }
+
+        .submit {
+          margin-top: 14px;
+          max-width: 100%;
+          margin-bottom: 0;
+        }
+
+        .whole-content-block {
+          -ms-grid-column: 2;
+          margin-top: 0;
         }
       }
-    }
-
-    .list-block {
-      position: relative;
-      -ms-grid-column: 1;
-
-      @media all and (min-width: 768px) {
-        margin-right: 17.5px;
-      }
-
-      ul li {
-        padding: 10px 17.5px;
-      }
-
-      p {
-        font-weight: 700;
-        line-height: normal;
-        padding: 0;
-      }
-    }
-
-    .image-block {
-      -ms-grid-column: 2;
     }
   }
 
@@ -1538,6 +1570,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
       p:first-letter {
         font-size: 3em;
         font-weight: 700;
+      }
+    }
+
+    .list-block {
+      span.position {
+        padding-top: 5px;
+        display: block;
       }
     }
   }
@@ -1615,10 +1654,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
 
     .photo-bg,
     .image-block {
-      min-height: 250px;
+      height: 350px;
 
       @media all and (min-width: 520px) {
-        height: 300px;
         min-height: auto;
       }
     }
@@ -1648,6 +1686,37 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
   }
 }
 
+.cta {
+  width: 100vw;
+  max-width: 100vw;
+  padding: 20px 0;
+  background: #f7fcfc;
+  margin-left: -25px;
+
+  @media all and (min-width: 520px) {
+    margin-left: -50px;
+  }
+
+  @media all and (min-width: 768px) {
+    margin-left: -50px;
+  }
+
+  @media all and (min-width: 991px) {
+    margin-left: -100px;
+  }
+
+  .whole-content-block {
+    margin-top: 0;
+    z-index: 9;
+    text-align: center;
+  }
+
+  .submit {
+    margin: 10px auto 0;
+    transform: scale(1.1);
+  }
+}
+
 .partner-award {
   @media all and (min-width: 768px) {
     margin-bottom: 8vw;
@@ -1673,6 +1742,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
 
   h4 {
     color: #3fa6b0;
+  }
+
+  .submit {
+    background-position: -4vw center;
+    margin-bottom: 0;
+
+    @media all and (min-width: 768px) {
+      background-position: -27px center;
+    }
+
+    span {
+      padding-left: 0;
+    }
   }
 
   .col-34-66 {
@@ -1756,7 +1838,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
     text-decoration: none;
     display: block;
     width: 40vw;
-    height: 45vw;
+    height: 53vw;
 
     @media all and (min-width: 520px) {
       width: 25vw;
@@ -2175,7 +2257,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
     padding: 0;
     font-size: 16px;
 
-    @media all and (min-width: 520px) {
+    @media all and (min-width: 991px) {
       font-size: 20px;
     }
 
@@ -2253,7 +2335,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
   .days-selector {
     position: relative;
     height: 40px;
-    width: 300px;
+    width: 280px;
     border: none;
     border-radius: 30px;
     margin-bottom: 6vw;
@@ -2262,15 +2344,25 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
     overflow: hidden;
     z-index: 9;
 
+    @media all and (min-width: 520px) {
+      width: 300px;
+    }
+
     .day {
       float: left;
       padding: 10px 5px;
       height: 100%;
-      width: 46.6%;
+      width: 46.3%;
+      font-size: 14px;
       text-align: center;
       transition: all .5s linear;
       color: rgba(0,0,0,0.7);
       overflow: hidden;
+
+      @media all and (min-width: 520px) {
+        width: 46.6%;
+        font-size: 16px;
+      }
 
       &:hover {
         transition: all .5s linear;
@@ -2616,7 +2708,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
  }
 
  .hex.fourth {
-   margin: 225px 0 0 -11.5vw;
+   margin: 73vw 0 0 -11.5vw;
 
    @media all and (min-width: 520px) {
      margin: 16vw 0 0 -11.5vw;

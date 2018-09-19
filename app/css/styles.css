@@ -1,9 +1,17 @@
 @charset "UTF-8";
+html {
+  background-color: #ffffff; }
+
 body {
   font-family: 'lato', sans-serif;
   display: grid;
   display: -ms-grid;
-  margin: 0; }
+  margin: 0;
+  opacity: 1;
+  transition: 2s opacity; }
+  body.fade-out {
+    opacity: 0;
+    transition: none; }
 
 h1,
 h2,
@@ -129,6 +137,11 @@ h4,
 
 .highlight {
   font-weight: 900; }
+
+.detail {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 700; }
 
 /*css specific to containers*/
 .page-cover {
@@ -368,6 +381,21 @@ h4,
     transition: all .5s linear; }
   .button span {
     text-transform: uppercase; }
+  .button.submit {
+    background-color: #FFD46A;
+    background-image: url("https://cipherhealth.com/wp-content/uploads/2018/06/ticket.svg");
+    background-repeat: no-repeat;
+    background-position: -33px center;
+    background-size: 70% 70%;
+    max-width: 130px;
+    margin-bottom: 15px; }
+    .button.submit:hover {
+      background-color: #F2C14B; }
+    .button.submit span {
+      padding-left: 25px;
+      font-weight: 400;
+      font-size: 14px;
+      color: #2C585C; }
 
 h5.name {
   font-weight: 900; }
@@ -901,20 +929,6 @@ nav {
       nav #menu.dark-menu .social-icon:hover path {
         fill: rgba(0, 0, 0, 0.8);
         transition: all 0.5s; } }
-    nav #menu #submit {
-      background-color: #FFD46A;
-      background-image: url("https://cipherhealth.com/wp-content/uploads/2018/06/ticket.svg");
-      background-repeat: no-repeat;
-      background-position: -33px center;
-      background-size: 70% 70%;
-      max-width: 130px;
-      margin-bottom: 15px; }
-      nav #menu #submit:hover {
-        background-color: #F2C14B; }
-      nav #menu #submit span {
-        padding-left: 25px;
-        font-size: 14px;
-        color: #2C585C; }
 
 /*css specific to the individual sections */
 .page-bg {
@@ -1147,25 +1161,36 @@ nav {
     .the-conference .left-column {
       -ms-grid-column: 1; } }
   @media all and (min-width: 520px) and (max-width: 768px) {
-    .the-conference .left-column .col-66-34.split-content-block {
+    .the-conference .left-column .col-50-50.split-content-block {
       grid-template-rows: 100%;
       -ms-grid-rows: 50% 50%;
-      grid-template-columns: 100% 0;
-      -ms-grid-columns: 100% 0; } }
-  .the-conference .left-column .list-block {
+      grid-template-columns: 100%;
+      -ms-grid-columns: 100%; } }
+  .the-conference .left-column .col-50-50.split-content-block .list-block {
     position: relative;
     -ms-grid-column: 1; }
     @media all and (min-width: 768px) {
-      .the-conference .left-column .list-block {
+      .the-conference .left-column .col-50-50.split-content-block .list-block {
         margin-right: 17.5px; } }
-    .the-conference .left-column .list-block ul li {
+    .the-conference .left-column .col-50-50.split-content-block .list-block ul li {
       padding: 10px 17.5px; }
-    .the-conference .left-column .list-block p {
+    .the-conference .left-column .col-50-50.split-content-block .list-block p {
       font-weight: 700;
       line-height: normal;
       padding: 0; }
-  .the-conference .left-column .image-block {
-    -ms-grid-column: 2; }
+  .the-conference .left-column .col-50-50.split-content-block .image-block {
+    height: 88%;
+    display: none; }
+    @media all and (min-width: 768px) {
+      .the-conference .left-column .col-50-50.split-content-block .image-block {
+        display: block; } }
+  .the-conference .left-column .col-50-50.split-content-block .submit {
+    margin-top: 14px;
+    max-width: 100%;
+    margin-bottom: 0; }
+  .the-conference .left-column .col-50-50.split-content-block .whole-content-block {
+    -ms-grid-column: 2;
+    margin-top: 0; }
 
 .the-conference .right-column {
   -ms-grid-column: 1;
@@ -1185,6 +1210,9 @@ nav {
     .the-conference .right-column .text-block p:first-letter {
       font-size: 3em;
       font-weight: 700; }
+  .the-conference .right-column .list-block span.position {
+    padding-top: 5px;
+    display: block; }
 
 .keynotes h2 {
   padding: 30px 30px 18px; }
@@ -1238,11 +1266,10 @@ nav {
         -ms-grid-row: 1; } }
   .keynotes .keynote-block .photo-bg,
   .keynotes .keynote-block .image-block {
-    min-height: 250px; }
+    height: 350px; }
     @media all and (min-width: 520px) {
       .keynotes .keynote-block .photo-bg,
       .keynotes .keynote-block .image-block {
-        height: 300px;
         min-height: auto; } }
   .keynotes .keynote-block .image-block {
     background-size: cover;
@@ -1262,6 +1289,29 @@ nav {
     @media all and (min-width: 520px) and (max-width: 768px) {
       .keynotes .keynote-block .arrow-up {
         display: none; } }
+
+.cta {
+  width: 100vw;
+  max-width: 100vw;
+  padding: 20px 0;
+  background: #f7fcfc;
+  margin-left: -25px; }
+  @media all and (min-width: 520px) {
+    .cta {
+      margin-left: -50px; } }
+  @media all and (min-width: 768px) {
+    .cta {
+      margin-left: -50px; } }
+  @media all and (min-width: 991px) {
+    .cta {
+      margin-left: -100px; } }
+  .cta .whole-content-block {
+    margin-top: 0;
+    z-index: 9;
+    text-align: center; }
+  .cta .submit {
+    margin: 10px auto 0;
+    transform: scale(1.1); }
 
 @media all and (min-width: 768px) {
   .partner-award {
@@ -1283,6 +1333,15 @@ nav {
 
 .partner-award h4 {
   color: #3fa6b0; }
+
+.partner-award .submit {
+  background-position: -4vw center;
+  margin-bottom: 0; }
+  @media all and (min-width: 768px) {
+    .partner-award .submit {
+      background-position: -27px center; } }
+  .partner-award .submit span {
+    padding-left: 0; }
 
 .partner-award .col-34-66.split-content-block {
   grid-template-columns: 100%;
@@ -1340,7 +1399,7 @@ nav {
     text-decoration: none;
     display: block;
     width: 40vw;
-    height: 45vw; }
+    height: 53vw; }
     @media all and (min-width: 520px) {
       .speakers .speakers-block {
         width: 25vw;
@@ -1541,7 +1600,7 @@ nav {
   margin-top: -3px;
   padding: 0;
   font-size: 16px; }
-  @media all and (min-width: 520px) {
+  @media all and (min-width: 991px) {
     .program h3 {
       font-size: 20px; } }
   @media all and (min-width: 1200px) {
@@ -1597,7 +1656,7 @@ nav {
 .program .days-selector {
   position: relative;
   height: 40px;
-  width: 300px;
+  width: 280px;
   border: none;
   border-radius: 30px;
   margin-bottom: 6vw;
@@ -1605,15 +1664,23 @@ nav {
   cursor: pointer;
   overflow: hidden;
   z-index: 9; }
+  @media all and (min-width: 520px) {
+    .program .days-selector {
+      width: 300px; } }
   .program .days-selector .day {
     float: left;
     padding: 10px 5px;
     height: 100%;
-    width: 46.6%;
+    width: 46.3%;
+    font-size: 14px;
     text-align: center;
     transition: all .5s linear;
     color: rgba(0, 0, 0, 0.7);
     overflow: hidden; }
+    @media all and (min-width: 520px) {
+      .program .days-selector .day {
+        width: 46.6%;
+        font-size: 16px; } }
     .program .days-selector .day:hover {
       transition: all .5s linear;
       background: #d7f4f4; }
@@ -1834,7 +1901,7 @@ nav {
       margin: -9vw 0 0 -25vw; } }
 
 .hex.fourth {
-  margin: 225px 0 0 -11.5vw; }
+  margin: 73vw 0 0 -11.5vw; }
   @media all and (min-width: 520px) {
     .hex.fourth {
       margin: 16vw 0 0 -11.5vw; } }

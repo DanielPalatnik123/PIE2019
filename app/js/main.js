@@ -88,7 +88,8 @@ $('.menu-item').on('click', menuScroll);
 function peopleSayingHeight() {
   var leftColumnVideoHeight = $(".the-conference .left-column video")[0].clientHeight;
   var leftColumnLogosHeight = $(".the-conference .left-column .list-block")[0].clientHeight;
-  var leftColumnImageHeight = $(".the-conference .left-column .whole-content-block .image-block")[0].clientHeight;
+  var leftColumnButtonHeight = $(".the-conference .left-column .whole-content-block.middle-block")[0].clientHeight;
+  var leftColumnImageHeight = $(".the-conference .left-column .whole-content-block.bottom-block")[0].clientHeight;
 
   var textHeight = $(".the-conference .right-column .text-block")[0].clientHeight;
   var imgHeight = $(".the-conference .right-column .image-block")[0].clientHeight;
@@ -97,7 +98,13 @@ function peopleSayingHeight() {
 
   var containerHeight = '';
 
-  containerHeight = (leftColumnVideoHeight + leftColumnLogosHeight + leftColumnImageHeight) - (textHeight + imgHeight);
+  if (($(window).width() >= 520) && ($(window).width() <= 767)){
+    containerHeight = (leftColumnVideoHeight + leftColumnLogosHeight + leftColumnImageHeight + leftColumnButtonHeight) - (textHeight + imgHeight);
+
+  } else {
+    containerHeight = (leftColumnVideoHeight + leftColumnLogosHeight + leftColumnImageHeight) - (textHeight + imgHeight);
+  }
+
   list.css('height', containerHeight);
 }
 
@@ -111,7 +118,7 @@ function SpeakersMobileCollapse() {
   var titleOffset = $('.speakers-container h1')[0].offsetTop
   var collapsedOffset = $('.speakers-container')[0].children[10].offsetTop
   var uncollapsedOffset = $('.speakers-container').children().last()[0].offsetTop
-  var finalCollapsedHeight = uncollapsedOffset - collapsedOffset + 120
+  var finalCollapsedHeight = uncollapsedOffset - collapsedOffset + 74
   var finalUncollapsedHeight = uncollapsedOffset - titleOffset + 250
 
   if ($(window).width() <= 520){
@@ -129,7 +136,7 @@ function SpeakersExpandHeight() {
   var titleOffset = $('.speakers-container h1')[0].offsetTop
   var collapsedOffset = $('.speakers-container')[0].children[10].offsetTop
   var uncollapsedOffset = $('.speakers-container').children().last()[0].offsetTop
-  var finalCollapsedHeight = uncollapsedOffset - collapsedOffset + 100
+  var finalCollapsedHeight = uncollapsedOffset - collapsedOffset + 74
   var finalUncollapsedHeight = uncollapsedOffset - titleOffset + 250
 
   if (expanderButton[0].innerHTML == 'SEE ALL SPEAKERS') {
@@ -365,12 +372,3 @@ $('.close').on('click', toggleModal);
 
   startCounter();
 })()
-
-
-/*funtion to display page */
-
-function showPage() {
-  $('.page-cover').hide()
-}
-
-setTimeout(showPage, 0);
