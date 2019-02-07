@@ -402,7 +402,8 @@ h5.name {
 
 span.position {
   font-size: 12px;
-  font-weight: 700; }
+  font-weight: 700;
+  display: block; }
   @media all and (min-width: 520px) {
     span.position {
       font-size: 14px; } }
@@ -419,7 +420,8 @@ span.position {
   transition: all .5s linear;
   cursor: pointer;
   z-index: 9;
-  margin-bottom: 80px; }
+  margin-bottom: 80px;
+  margin-top: 10px; }
   @media all and (min-width: 520px) {
     .expander {
       display: none; } }
@@ -672,10 +674,10 @@ span.position {
   transition: all 0.3s; }
 
 .play-button-container {
-  transform: scale(0.7);
-  width: 213px;
+  transform: scale(0.9);
+  width: 270px;
   border-radius: 40px;
-  height: 50px;
+  height: 40px;
   display: block;
   position: absolute;
   z-index: 8;
@@ -688,9 +690,13 @@ span.position {
   cursor: pointer;
   border: 4px solid #ffffff;
   background: rgba(255, 255, 255, 0.2); }
+  @media all and (min-width: 520px) {
+    .play-button-container {
+      width: 42px; } }
   @media all and (min-width: 768px) {
     .play-button-container {
-      transform: scale(0.9); } }
+      width: 380px;
+      height: 40px; } }
   .play-button-container:hover {
     border: 4px solid #f1f1f1;
     background: rgba(241, 241, 241, 0.2); }
@@ -699,6 +705,7 @@ span.position {
     .play-button-container:hover .play-button-text {
       color: #f1f1f1; }
   .play-button-container .play {
+    display: none;
     margin-top: 13px;
     float: left;
     padding-left: 0;
@@ -706,9 +713,17 @@ span.position {
     border-top: 11px solid transparent;
     border-bottom: 11px solid transparent;
     left: 7px;
-    display: inline-block;
     z-index: 1;
     border-left: 18px solid #ffffff; }
+    @media all and (min-width: 520px) {
+      .play-button-container .play {
+        display: inline-block;
+        margin-top: 9px;
+        margin-left: 15px; } }
+    @media all and (min-width: 768px) {
+      .play-button-container .play {
+        margin-top: 9px;
+        margin-left: 0; } }
     .play-button-container .play::before {
       content: '';
       position: absolute;
@@ -724,13 +739,21 @@ span.position {
       opacity: 0;
       transition: opacity 0.6s; }
   .play-button-container .play-button-text {
-    margin: 16px 14px 0 20px;
+    margin: 13px 14px 0 20px;
     float: left;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: #ffffff; }
+    @media all and (min-width: 520px) {
+      .play-button-container .play-button-text {
+        display: none; } }
+    @media all and (min-width: 768px) {
+      .play-button-container .play-button-text {
+        margin: 11px 14px 0 20px;
+        font-size: 16px;
+        display: inline-block; } }
 
 .video-modal {
   position: fixed;
@@ -1294,8 +1317,11 @@ nav {
   width: 100vw;
   max-width: 100vw;
   padding: 20px 0;
-  background: #f7fcfc;
-  margin-left: -25px; }
+  background: rgba(247, 252, 252, 0.3);
+  margin-left: -25px;
+  margin-top: 0;
+  z-index: 9;
+  text-align: center; }
   @media all and (min-width: 520px) {
     .cta {
       margin-left: -50px; } }
@@ -1305,10 +1331,6 @@ nav {
   @media all and (min-width: 991px) {
     .cta {
       margin-left: -100px; } }
-  .cta .whole-content-block {
-    margin-top: 0;
-    z-index: 9;
-    text-align: center; }
   .cta .submit {
     margin: 10px auto 0;
     transform: scale(1.1); }
@@ -1387,32 +1409,39 @@ nav {
       text-transform: uppercase;
       display: block;
       padding-left: 9px; }
-  .speakers h5 {
+  .speakers h5.name {
     padding-top: 5px;
     font-size: 14px; }
   .speakers p {
     font-size: 12px;
     line-height: initial; }
-  .speakers h5, .speakers p {
+  .speakers span.position {
+    font-size: 12px;
+    padding-top: 5px; }
+  .speakers h5.name, .speakers span.position, .speakers p {
     transition: all .5s linear; }
   .speakers .speakers-block {
     text-decoration: none;
     display: block;
     width: 40vw;
-    height: 53vw; }
+    height: 250px; }
     @media all and (min-width: 520px) {
       .speakers .speakers-block {
         width: 25vw;
-        height: 35vw; } }
+        height: 38vw; } }
     @media all and (min-width: 768px) {
       .speakers .speakers-block {
-        width: 15vw;
-        height: 20vw; } }
+        width: 20vw;
+        height: 27vw; } }
     @media all and (min-width: 991px) {
       .speakers .speakers-block {
         width: 12vw;
-        height: 15vw; } }
-    .speakers .speakers-block:hover h5 {
+        height: 20vw; } }
+    @media all and (min-width: 1200px) {
+      .speakers .speakers-block {
+        width: 12.5vw;
+        height: 18vw; } }
+    .speakers .speakers-block:hover h5.name, .speakers .speakers-block:hover span.position, .speakers .speakers-block:hover p {
       color: #2ab0c9;
       transition: all 0.5s; }
     .speakers .speakers-block:hover p {
@@ -1436,12 +1465,9 @@ nav {
       @media all and (min-width: 768px) {
         .speakers .speakers-block .text-block {
           padding: 0 1vw 0 0; } }
-      @media all and (min-width: 991px) {
-        .speakers .speakers-block .text-block {
-          padding: 0 4vw 0 0; } }
       @media all and (min-width: 1200px) {
         .speakers .speakers-block .text-block {
-          padding: 0 3vw 0 0; } }
+          padding: 0 3.5vw 0 0; } }
     .speakers .speakers-block img,
     .speakers .speakers-block .photo-bg {
       min-width: 80px;
@@ -1453,11 +1479,11 @@ nav {
       @media all and (min-width: 768px) {
         .speakers .speakers-block img,
         .speakers .speakers-block .photo-bg {
-          width: 14vw; } }
+          width: 18vw; } }
       @media all and (min-width: 991px) {
         .speakers .speakers-block img,
         .speakers .speakers-block .photo-bg {
-          width: 8vw; } }
+          width: 11vw; } }
       @media all and (min-width: 1200px) {
         .speakers .speakers-block img,
         .speakers .speakers-block .photo-bg {
@@ -1471,10 +1497,10 @@ nav {
           height: 25vw; } }
       @media all and (min-width: 768px) {
         .speakers .speakers-block .photo-bg {
-          height: 14vw; } }
+          height: 18vw; } }
       @media all and (min-width: 991px) {
         .speakers .speakers-block .photo-bg {
-          height: 8vw; } }
+          height: 11vw; } }
       @media all and (min-width: 1200px) {
         .speakers .speakers-block .photo-bg {
           height: 9vw; } }
@@ -1484,7 +1510,7 @@ nav {
     height: 65vw; }
     @media all and (min-width: 520px) {
       .speakers .speakers-info-block.quote {
-        height: 72vw; } }
+        height: 66vw; } }
     @media all and (min-width: 768px) {
       .speakers .speakers-info-block.quote {
         height: 22vw; } }
@@ -1493,7 +1519,7 @@ nav {
         height: 12vw; } }
     .speakers .speakers-info-block.quote h2 {
       color: #ffffff; }
-    .speakers .speakers-info-block.quote .quote-symbol, .speakers .speakers-info-block.quote h5, .speakers .speakers-info-block.quote p {
+    .speakers .speakers-info-block.quote .quote-symbol, .speakers .speakers-info-block.quote h5.name, .speakers .speakers-info-block.quote span.position, .speakers .speakers-info-block.quote p {
       color: #2C585C; }
     .speakers .speakers-info-block.quote h5 {
       padding-top: 20px;
@@ -1513,31 +1539,37 @@ nav {
           height: 78vw; } }
       @media all and (min-width: 768px) {
         .speakers .speakers-info-block.quote .whole-content-block {
-          width: 40vw;
-          height: 71.5vw;
+          width: 45vw;
+          height: 87.5vw;
           padding: 2vw; } }
       @media all and (min-width: 991px) {
         .speakers .speakers-info-block.quote .whole-content-block {
-          width: 21.5vw;
-          height: 50vw; } }
+          width: 24.5vw;
+          height: 63vw; } }
       @media all and (min-width: 1200px) {
         .speakers .speakers-info-block.quote .whole-content-block {
           width: 20vw;
-          height: 45vw; } }
+          height: 51vw; } }
       .speakers .speakers-info-block.quote .whole-content-block .quote-symbol {
         font-size: 172px;
         margin-top: 60px;
         line-height: 20px;
         font-family: 'palanquin', sans-serif; }
+        @media all and (min-width: 768px) {
+          .speakers .speakers-info-block.quote .whole-content-block .quote-symbol {
+            padding: 20px 20px 0; } }
+      @media all and (min-width: 768px) {
+        .speakers .speakers-info-block.quote .whole-content-block .quote-text {
+          padding: 0 20px 20px 20px; } }
       .speakers .speakers-info-block.quote .whole-content-block .quote-text h2 {
         font-weight: 300;
-        font-size: 5vw; }
+        font-size: 5.3vw; }
         @media all and (min-width: 768px) {
           .speakers .speakers-info-block.quote .whole-content-block .quote-text h2 {
-            font-size: 4.2vw; } }
+            font-size: 4.8vw; } }
         @media all and (min-width: 991px) {
           .speakers .speakers-info-block.quote .whole-content-block .quote-text h2 {
-            font-size: 2.6vw; } }
+            font-size: 3vw; } }
         @media all and (min-width: 1200px) {
           .speakers .speakers-info-block.quote .whole-content-block .quote-text h2 {
             font-size: 2.5vw; } }
@@ -1561,7 +1593,7 @@ nav {
       .speakers .speakers-container {
         grid-row-gap: 5vw;
         -ms-grid-row-gap: 5vw;
-        grid-template-areas: "speaker0 . . speaker2 speaker3" "speaker4 speaker5 speaker6 speaker7 speaker8" "speaker9 speaker10 speaker11 speaker1 ." "speaker12 speaker13 speaker14 . ." "speaker15 speaker16 speaker17 . ." "speaker18 speaker19 speaker20 speaker21 speaker22" "speaker23 speaker24 speaker25 speaker26 speaker27"; } }
+        grid-template-areas: "speaker0 . . speaker2 speaker3" "speaker4 speaker5 speaker6 speaker7 speaker8" "speaker9 speaker10 speaker11 speaker1 ." "speaker12 speaker13 speaker14 . ." "speaker15 speaker16 speaker17 . ." "speaker18 speaker19 speaker20 speaker21 speaker22" "speaker23 speaker24 speaker25 speaker26 speaker27" "speaker28 speaker29 speaker30 speaker31 speaker32"; } }
 
 .program .section-bg {
   position: absolute;
@@ -1656,31 +1688,30 @@ nav {
 .program .days-selector {
   position: relative;
   height: 40px;
-  width: 280px;
+  width: 315px;
   border: none;
   border-radius: 30px;
   margin-bottom: 6vw;
   background: rgba(255, 255, 255, 0.3);
   cursor: pointer;
   overflow: hidden;
-  z-index: 9; }
+  z-index: 9;
+  transform: scale(0.9);
+  margin-left: -18px; }
   @media all and (min-width: 520px) {
     .program .days-selector {
-      width: 300px; } }
+      transform: scale(1);
+      margin-left: 0; } }
   .program .days-selector .day {
     float: left;
     padding: 10px 5px;
     height: 100%;
-    width: 46.3%;
+    width: 46.8%;
     font-size: 14px;
     text-align: center;
     transition: all .5s linear;
     color: rgba(0, 0, 0, 0.7);
     overflow: hidden; }
-    @media all and (min-width: 520px) {
-      .program .days-selector .day {
-        width: 46.6%;
-        font-size: 16px; } }
     .program .days-selector .day:hover {
       transition: all .5s linear;
       background: #d7f4f4; }
@@ -1831,8 +1862,6 @@ nav {
         .event-info .event-infos-container .event-info-block a:hover {
           color: #2ab0c9;
           transition: all 0.5s; }
-      .event-info .event-infos-container .event-info-block .info-link {
-        word-break: break-all; }
       .event-info .event-infos-container .event-info-block .button {
         background: #396C99;
         background: -moz-linear-gradient(left, #18B3A5, #396C99);
@@ -1852,13 +1881,24 @@ nav {
             font-size: 12px; } }
       .event-info .event-infos-container .event-info-block .text-block {
         padding-right: 20px; }
-  .event-info #map {
-    height: 400px;
+  .event-info .event-map-container {
+    height: 700px;
     width: 100%;
-    -ms-grid-column: 2; }
+    -ms-grid-column: 2;
+    display: grid;
+    display: -ms-grid;
+    grid-template-rows: 50% 50%;
+    -ms-grid-rows: 50% 50%; }
     @media all and (min-width: 768px) {
-      .event-info #map {
+      .event-info .event-map-container {
         height: 100%; } }
+    .event-info .event-map-container .image-block {
+      -ms-grid-row: 1;
+      -ms-grid-column: 1; }
+    .event-info .event-map-container #map {
+      -ms-grid-row: 2;
+      -ms-grid-column: 1;
+      margin-top: 35px; }
 
 /*css specific to the background hexagons*/
 .hex {
@@ -1885,7 +1925,7 @@ nav {
 
 .hex.second {
   margin: 162vw 0 0 -70vw;
-  opacity: 0.3; }
+  opacity: 0.5; }
   @media all and (min-width: 520px) {
     .hex.second {
       margin: 134vw 0 0 -12.5vw; } }

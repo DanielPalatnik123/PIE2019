@@ -510,6 +510,7 @@ h5.name {
 span.position {
   font-size: 12px;
   font-weight: 700;
+  display: block;
 
   @media all and (min-width: 520px) {
     font-size: 14px;
@@ -529,6 +530,7 @@ span.position {
   cursor: pointer;
   z-index: 9;
   margin-bottom: 80px;
+  margin-top: 10px;
 
   @media all and (min-width: 520px) {
     display: none;
@@ -844,10 +846,10 @@ span.position {
 }
 
 .play-button-container {
-  transform: scale(0.7);
-  width: 213px;
+  transform: scale(0.9);
+  width: 270px;
   border-radius: 40px;
-  height: 50px;
+  height: 40px;
   display: block;
   position: absolute;
   z-index: 8;
@@ -861,8 +863,13 @@ span.position {
   border: 4px solid #ffffff;
   background: rgba(255, 255, 255, 0.2);
 
+  @media all and (min-width: 520px) {
+    width: 42px;
+  }
+
   @media all and (min-width: 768px) {
-    transform: scale(0.9);
+    width: 380px;
+    height: 40px;
   }
 
   &:hover {
@@ -879,6 +886,7 @@ span.position {
   }
 
   .play {
+    display: none;
     margin-top: 13px;
     float: left;
     padding-left: 0;
@@ -886,9 +894,20 @@ span.position {
     border-top: 11px solid transparent;
     border-bottom: 11px solid transparent;
     left: 7px;
-    display:inline-block;
     z-index:1;
     border-left: 18px solid #ffffff;
+
+
+    @media all and (min-width: 520px) {
+      display: inline-block;
+      margin-top: 9px;
+      margin-left: 15px;
+    }
+
+    @media all and (min-width: 768px) {
+      margin-top: 9px;
+      margin-left: 0;
+    }
 
     &::before {
       content:'';
@@ -910,13 +929,23 @@ span.position {
   }
 
   .play-button-text {
-    margin: 16px 14px 0 20px;
+    margin: 13px 14px 0 20px;
     float: left;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: #ffffff;
+
+    @media all and (min-width: 520px) {
+      display: none;
+    }
+
+    @media all and (min-width: 768px) {
+      margin: 11px 14px 0 20px;
+      font-size: 16px;
+      display: inline-block;
+    }
   }
 }
 
@@ -1690,8 +1719,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
   width: 100vw;
   max-width: 100vw;
   padding: 20px 0;
-  background: #f7fcfc;
+  background: rgba(247,252,252,0.3);
   margin-left: -25px;
+  margin-top: 0;
+  z-index: 9;
+  text-align: center;
 
   @media all and (min-width: 520px) {
     margin-left: -50px;
@@ -1703,12 +1735,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
 
   @media all and (min-width: 991px) {
     margin-left: -100px;
-  }
-
-  .whole-content-block {
-    margin-top: 0;
-    z-index: 9;
-    text-align: center;
   }
 
   .submit {
@@ -1812,6 +1838,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
 
   h1 {
     padding-top: 0;
+
     span {
       font-size: 12px;
       text-transform: uppercase;
@@ -1820,7 +1847,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
     }
   }
 
-  h5 {
+  h5.name {
     padding-top: 5px;
     font-size: 14px;
   }
@@ -1830,7 +1857,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
     line-height: initial;
   }
 
-  h5, p {
+  span.position {
+    font-size: 12px;
+    padding-top: 5px;
+  }
+
+  h5.name, span.position, p {
     transition: all .5s linear;
   }
 
@@ -1838,25 +1870,30 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
     text-decoration: none;
     display: block;
     width: 40vw;
-    height: 53vw;
+    height: 250px;
 
     @media all and (min-width: 520px) {
       width: 25vw;
-      height: 35vw;
+      height: 38vw;
     }
 
     @media all and (min-width: 768px) {
-      width: 15vw;
-      height: 20vw;
+      width: 20vw;
+      height: 27vw;
     }
 
     @media all and (min-width: 991px) {
       width: 12vw;
-      height: 15vw;
+      height: 20vw;
+    }
+
+    @media all and (min-width: 1200px) {
+      width: 12.5vw;
+      height: 18vw;
     }
 
     &:hover {
-      h5 {
+      h5.name, span.position, p {
         color: #2ab0c9;
         transition: all 0.5s;
       }
@@ -1893,12 +1930,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
         padding: 0 1vw 0 0;
       }
 
-      @media all and (min-width: 991px) {
-        padding: 0 4vw 0 0;
-      }
-
       @media all and (min-width: 1200px) {
-        padding: 0 3vw 0 0;
+        padding: 0 3.5vw 0 0;
       }
     }
 
@@ -1912,11 +1945,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
       }
 
       @media all and (min-width: 768px) {
-        width: 14vw;
+        width: 18vw;
       }
 
       @media all and (min-width: 991px) {
-        width: 8vw;
+        width: 11vw;
       }
 
       @media all and (min-width: 1200px) {
@@ -1936,11 +1969,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
       }
 
       @media all and (min-width: 768px) {
-        height: 14vw;
+        height: 18vw;
       }
 
       @media all and (min-width: 991px) {
-        height: 8vw;
+        height: 11vw;
       }
 
       @media all and (min-width: 1200px) {
@@ -1959,7 +1992,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
       height: 65vw;
 
       @media all and (min-width: 520px) {
-        height: 72vw;
+        height: 66vw;
       }
 
       @media all and (min-width: 768px) {
@@ -1974,7 +2007,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
         color: #ffffff;
       }
 
-      .quote-symbol, h5, p {
+      .quote-symbol, h5.name, span.position, p {
         color: #2C585C;
       }
 
@@ -2000,19 +2033,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
         }
 
         @media all and (min-width: 768px) {
-          width: 40vw;
-          height: 71.5vw;
+          width: 45vw;
+          height: 87.5vw;
           padding: 2vw;
         }
 
         @media all and (min-width: 991px) {
-          width: 21.5vw;
-          height: 50vw;
+          width: 24.5vw;
+          height: 63vw;
         }
 
         @media all and (min-width: 1200px) {
           width: 20vw;
-          height: 45vw;
+          height: 51vw;
         }
 
         .quote-symbol {
@@ -2020,19 +2053,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
           margin-top: 60px;
           line-height: 20px;
           font-family: 'palanquin', sans-serif;
+
+          @media all and (min-width: 768px) {
+            padding: 20px 20px 0;
+          }
         }
 
         .quote-text {
+          @media all and (min-width: 768px) {
+            padding: 0 20px 20px 20px;
+          }
+
           h2 {
             font-weight: 300;
-            font-size: 5vw;
+            font-size: 5.3vw;
 
             @media all and (min-width: 768px) {
-              font-size: 4.2vw;
+              font-size: 4.8vw;
             }
 
             @media all and (min-width: 991px) {
-              font-size: 2.6vw;
+              font-size: 3vw;
             }
 
             @media all and (min-width: 1200px) {
@@ -2213,7 +2254,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
         "speaker12 speaker13 speaker14 . ."
         "speaker15 speaker16 speaker17 . ."
         "speaker18 speaker19 speaker20 speaker21 speaker22"
-        "speaker23 speaker24 speaker25 speaker26 speaker27";
+        "speaker23 speaker24 speaker25 speaker26 speaker27"
+        "speaker28 speaker29 speaker30 speaker31 speaker32";
+
     }
   }
 }
@@ -2335,7 +2378,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
   .days-selector {
     position: relative;
     height: 40px;
-    width: 280px;
+    width: 315px;
     border: none;
     border-radius: 30px;
     margin-bottom: 6vw;
@@ -2343,26 +2386,24 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
     cursor: pointer;
     overflow: hidden;
     z-index: 9;
+    transform: scale(0.9);
+    margin-left: -18px;
 
     @media all and (min-width: 520px) {
-      width: 300px;
+      transform: scale(1);
+      margin-left: 0;
     }
 
     .day {
       float: left;
       padding: 10px 5px;
       height: 100%;
-      width: 46.3%;
+      width: 46.8%;
       font-size: 14px;
       text-align: center;
       transition: all .5s linear;
       color: rgba(0,0,0,0.7);
       overflow: hidden;
-
-      @media all and (min-width: 520px) {
-        width: 46.6%;
-        font-size: 16px;
-      }
 
       &:hover {
         transition: all .5s linear;
@@ -2606,10 +2647,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
         }
       }
 
-      .info-link {
-        word-break: break-all;
-      }
-
       .button {
         background: #396C99;
         background: -moz-linear-gradient(left, #18B3A5, #396C99);
@@ -2640,15 +2677,30 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
     }
   }
 
-  #map {
-    height: 400px;
+  .event-map-container {
+    height: 700px;
     width: 100%;
     -ms-grid-column: 2;
+    display: grid;
+    display: -ms-grid;
+    grid-template-rows: 50% 50%;
+    -ms-grid-rows: 50% 50%;
 
     @media all and (min-width: 768px) {
       height: 100%;
     }
-   }
+
+    .image-block {
+      -ms-grid-row: 1;
+      -ms-grid-column: 1;
+    }
+
+    #map {
+      -ms-grid-row: 2;
+      -ms-grid-column: 1;
+      margin-top: 35px;
+     }
+  }
 }
 
 
@@ -2687,7 +2739,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d1e2', end
 
  .hex.second {
    margin: 162vw 0 0 -70vw;
-   opacity: 0.3;
+   opacity: 0.5;
 
    @media all and (min-width: 520px) {
      margin: 134vw 0 0 -12.5vw;

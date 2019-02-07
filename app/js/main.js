@@ -45,6 +45,7 @@ function menuScroll() {
   var thisAnchor = this
   var ind = ''
   var elementTop = ''
+  var modifiedIndex = ''
 
   /*compares clicked menu item with the entire array of menu items, gets its position*/
   allAnchors.map(function(index,element) {
@@ -56,22 +57,21 @@ function menuScroll() {
   /*compares array number decided above with the same array of sections (which positioning is the same as the menu items) and picks the equivalent section*/
   allSections.map(function(index,element) {
 
-    /*a modal content section on top of the top section will require the first menu item index to be skipped*/
-    var indexPastModal = index-1;
-    if (indexPastModal == ind && index != 0) {
+    /*a modal content section and top section on top of the page will require the two first menu items on the index to be skipped*/
+
+    if ((ind == 0 && index == 2) || (ind == 1 && index == 6) || (ind == 2 && index == 3) || (ind == 3 && index == 4) || (ind == 4 && index == 5) || (ind == 5 && index == 7)) {
       elementTop = element
-    } else if (ind == 0) {
-      elementTop = $('.page-wrapper')[0]
+    } else {
+      return
     }
   })
 
-  $('html, body').animate({
-      scrollTop: $(elementTop).offset().top
-  }, 1000);
-
-  if ((ind != 7) && (ind != 8) && (ind != 9) && (ind != 10)) {
-    return false;
+  if (elementTop != '') {
+    $('html, body').animate({
+        scrollTop: $(elementTop).offset().top
+    }, 1000);
   }
+
 }
 
 $('.menu-item').on('click', menuScroll);
@@ -116,9 +116,9 @@ $(window).on('resize', peopleSayingHeight);
 function SpeakersMobileCollapse() {
 
   var titleOffset = $('.speakers-container h1')[0].offsetTop
-  var collapsedOffset = $('.speakers-container')[0].children[10].offsetTop
+  var collapsedOffset = $('.speakers-container')[0].children[12].offsetTop
   var uncollapsedOffset = $('.speakers-container').children().last()[0].offsetTop
-  var finalCollapsedHeight = uncollapsedOffset - collapsedOffset + 74
+  var finalCollapsedHeight = uncollapsedOffset - collapsedOffset
   var finalUncollapsedHeight = uncollapsedOffset - titleOffset + 250
 
   if ($(window).width() <= 520){
@@ -134,9 +134,9 @@ function SpeakersMobileCollapse() {
 
 function SpeakersExpandHeight() {
   var titleOffset = $('.speakers-container h1')[0].offsetTop
-  var collapsedOffset = $('.speakers-container')[0].children[10].offsetTop
+  var collapsedOffset = $('.speakers-container')[0].children[12].offsetTop
   var uncollapsedOffset = $('.speakers-container').children().last()[0].offsetTop
-  var finalCollapsedHeight = uncollapsedOffset - collapsedOffset + 74
+  var finalCollapsedHeight = uncollapsedOffset - collapsedOffset
   var finalUncollapsedHeight = uncollapsedOffset - titleOffset + 250
 
   if (expanderButton[0].innerHTML == 'SEE ALL SPEAKERS') {
